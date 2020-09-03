@@ -1,0 +1,9 @@
+    @Override
+    public void run(final TestResult result) {
+        Protectable p = () -> {
+            setUp();
+            basicRun(result);
+            tearDown();
+        };
+        result.runProtected(this, p);
+    }

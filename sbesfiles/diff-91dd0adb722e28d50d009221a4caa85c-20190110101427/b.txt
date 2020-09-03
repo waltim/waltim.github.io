@@ -1,0 +1,9 @@
+            private String toChainedNotSelectors(WebDriver webDriver, SqCssFunctionalPseudoClassArgument functionalPseudoClassArgument) {
+                CssSelectorList parsedNotPseudoClassArgument = ParseTreeBuilder.parse(functionalPseudoClassArgument.getArgumentAsString());
+                StringBuilder chainedNotSelectors = new StringBuilder();
+                  parsedNotPseudoClassArgument.forEach(cssSelector -&gt; {
+                    chainedNotSelectors.append(":").append(PSEUDO_PURE_NOT).append("(").append(cssSelector.toElementFinder(webDriver).toCssString()).append(")");
+                  });
+                return chainedNotSelectors.toString();
+            }
+    

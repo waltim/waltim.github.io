@@ -1,0 +1,6 @@
+
+        @Override
+        public Observable&lt;byte[]&gt; writeCharacteristic(UUID characteristicUuid, byte[] data) {
+              return getCharacteristic(characteristicUuid).map(characteristic -&gt; characteristic.setValue(data)).flatMap(ignored -&gt; Observable.just(data));
+        }
+    

@@ -1,0 +1,11 @@
+
+        private Optional&lt;DataView&gt; getUnsafeView(DataQuery path) {
+              Optional&lt;Object&gt; val = get(path);
+              if (val.isPresent()) {
+                  if (val.get() instanceof DataView) {
+                      return Optional.of((DataView) val.get());
+                  }
+              }
+              return Optional.empty();
+        }
+    

@@ -1,0 +1,3 @@
+private static boolean hasArgument(String[] args, String name) {
+    return args.stream().anyMatch(a -> a.equals(name));
+}

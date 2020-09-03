@@ -1,0 +1,10 @@
+    
+
+      private static String join(List tokens) {
+           return StringUtils.join(Iterables.transform(tokens, new Function() {
+             public String apply(CoreLabel token) {
+               return token.get(CoreAnnotations.TextAnnotation.class);
+             }
+           }));
+      }
+    

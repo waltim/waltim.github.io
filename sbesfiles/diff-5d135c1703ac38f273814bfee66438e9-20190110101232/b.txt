@@ -1,0 +1,10 @@
+      protected void addInstances(Collection&gt; datums) {
+          datums.forEach(
+              datum -&gt; {
+                K label = datum.label();
+                Counter vec = datum.asFeaturesCounter();
+                instances.add(label, vec);
+                classLookup.put(vec, label);
+              });
+        }
+    

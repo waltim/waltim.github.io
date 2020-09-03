@@ -1,0 +1,11 @@
+
+            if (CollectionUtils.isNotEmpty(produces)) {
+                buildSectionTitle(PRODUCES, docBuilder);
+                docBuilder.newLine();
+    -            for (String produce : produces) {
+    -                docBuilder.unorderedListItem(literalText(produce));
+    -            }
+    +            produces.forEach(produce -&gt; docBuilder.unorderedListItem(literalText(produce)));
+                docBuilder.newLine();
+            }
+    

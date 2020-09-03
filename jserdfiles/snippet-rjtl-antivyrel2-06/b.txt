@@ -1,0 +1,7 @@
+public Caller[] getAllRealCallers() {
+    Set<Caller> all = new HashSet<>();
+    for (Map<ModuleRevisionId, Caller> callers : callersByRootConf.values()) {
+        all  = callers.values().stream().filter(c -> c.isRealCaller()).collect(Collectors.toList());
+    }
+    return all.toArray(new Caller[all.size()]);
+}

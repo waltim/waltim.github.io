@@ -1,0 +1,13 @@
+
+        public static SingletonInverseVariableSupply mockSingletonInverseVariableSupply(
+                final TestdataChainedEntity[] allEntities) {
+              return planningValue -&gt; {
+                  for (TestdataChainedEntity entity : allEntities) {
+                      if (entity.getChainedObject().equals(planningValue)) {
+                          return entity;
+                    }
+                }
+                  return null;
+            };
+        }
+    

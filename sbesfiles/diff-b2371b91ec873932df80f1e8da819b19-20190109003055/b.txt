@@ -1,0 +1,8 @@
+
+            if (CollectionUtils.isNotEmpty(produces)) {
+                buildSectionTitle(PRODUCES, docBuilder);
+                docBuilder.newLine();
+                  produces.forEach(produce -&gt; docBuilder.unorderedListItem(literalText(produce)));
+                docBuilder.newLine();
+            }
+    

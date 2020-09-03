@@ -1,0 +1,42 @@
+
+         */
+        private void queryProvinces() {
+            collapsingToolbarLayout.setTitle("éæ©çä»½");
+    -        Observer&lt;Province&gt; observer = new Observer&lt;Province&gt;() {
+    -            @Override
+    -            public void onCompleted() {
+    +        Observable.defer(() -&gt; {
+    +            provincesList = mWeatherDB.loadProvinces(mDBManager.getDatabase());
+    +            dataList.clear();
+    +            return Observable.from(provincesList);
+    +        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
+    +            province -&gt; dataList.add(province.ProName), throwable -&gt; PLog.e(TAG, throwable.toString()), () -&gt; {
+                    currentLevel = LEVEL_PROVINCE;
+                    mAdapter.notifyDataSetChanged();
+                    mProgressBar.setVisibility(View.GONE);
+    -                //PLog.i(TAG,"çä»½");
+    -            }
+    -
+    -            @Override
+    -            public void onError(Throwable e) {
+    -
+                }
+    -            @Override
+    -            public void onNext(Province province) {
+    -                //å¨è¿éå RV çå¨ç»ææ ä½¿ç¨ Item çæ´æ°
+    -                dataList.add(province.ProName);
+    -                //PLog.i(TAG,province.ProSort+"");
+    -                //mAdapter.notifyItemInserted(province.ProSort-1);
+    -
+    -            }
+    -        };
+    -
+    -        Observable.defer(() -&gt; {
+    -            provincesList = mWeatherDB.loadProvinces(mDBManager.getDatabase());
+    -            dataList.clear();
+    -            mAdapter.notifyDataSetChanged();
+    -            return Observable.from(provincesList);
+    -        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(observer);
+    +        );
+        }
+    

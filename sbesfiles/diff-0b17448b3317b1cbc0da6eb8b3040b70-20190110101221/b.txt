@@ -1,0 +1,17 @@
+
+      private static List makeSVMLightLineInfos(List lines) {
+        List lineInfos = new ArrayList&lt;&gt;(lines.size());
+          lines
+              .stream()
+              .map(
+                  line -&gt; {
+                    line = line.replaceFirst("#.*$", "");
+                    return line;
+                  })
+              .forEach(
+                  line -&gt; {
+                    lineInfos.add(line.split("\\s+"));
+                  });
+        return lineInfos;
+      }
+    

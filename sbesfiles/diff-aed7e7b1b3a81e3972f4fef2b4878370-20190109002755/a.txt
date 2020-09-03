@@ -1,0 +1,14 @@
+
+            @Inject
+              public FactoryTemplateProcessor(final Configuration config, final InjectionManager injectionManager,
+                                              @Optional final ServletContext servletContext) {
+                  super(config, servletContext, "factory", "fct");
+      
+                  this.factory = getTemplateObjectFactory(injectionManager, TestFactory.class, Values.lazy(new Value&lt;TestFactory&gt;() {
+                      @Override
+                      public TestFactory get() {
+                          return new TestFactory("Default Test Factory");
+                      }
+                  }));
+            }
+    

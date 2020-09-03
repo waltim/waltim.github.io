@@ -1,0 +1,6 @@
+    public <T> void checkThat(final String reason, final T value, final Matcher<T> matcher) {
+        checkSucceeds((Callable<Object>) () -> {
+            assertThat(reason, value, matcher);
+            return value;
+        });
+    }

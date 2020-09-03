@@ -1,0 +1,6 @@
+
+        @Override
+          public void replaceIfPresent(K k, V oldValue, V newValue, Handler&lt;AsyncResult&lt;Boolean&gt;&gt; resultHandler) {
+            vertx.executeBlocking(fut -&gt; fut.complete(map.replace(k, oldValue, newValue)), resultHandler);
+        }
+    

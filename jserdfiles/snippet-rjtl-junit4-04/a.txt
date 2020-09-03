@@ -1,0 +1,7 @@
+public void runTest() {
+    runBeforesThenTestThenAfters(new Runnable() {
+        public void run() {
+            runTestMethod();
+        }
+    });
+}

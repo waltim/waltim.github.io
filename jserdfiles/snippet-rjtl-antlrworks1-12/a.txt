@@ -1,0 +1,7 @@
+public void connectionSuccess() {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            debuggerTab.connectionSuccess();
+        }
+    });
+}

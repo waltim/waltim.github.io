@@ -1,0 +1,8 @@
+
+            _subscriptions//
+                    .add(tapEventEmitter.subscribe(event -&gt; {
+                        if (event instanceof RxBusDemoFragment.TapEvent) {
+                            _showTapText();
+                      }
+                  }));
+    

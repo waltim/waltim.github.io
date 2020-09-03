@@ -1,0 +1,3 @@
+private static boolean isAssignableToAnyOf(Class<?>[] typeArray, Object target) {
+    return typeArray.stream().anyMatch(type -> type.isAssignableFrom(target.getClass()));
+}

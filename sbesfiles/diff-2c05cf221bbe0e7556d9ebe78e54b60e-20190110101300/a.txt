@@ -1,0 +1,20 @@
+      public static  Iterable transform(
+          final Iterable iterable, final Function function) {
+    
+
+           return new Iterable() {
+             public Iterator iterator() {
+               return new Iterator() {
+              Iterator inner = iterable.iterator();
+    
+
+              public boolean hasNext() {
+    @@ -56,9 +54,7 @@ public V next() {
+              public void remove() {
+                inner.remove();
+              }
+               };
+             }
+           };
+      }
+    

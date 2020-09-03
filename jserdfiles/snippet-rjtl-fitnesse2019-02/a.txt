@@ -1,0 +1,8 @@
+private boolean containsTag(String[] testTags, String queryTag) {
+    for (String testTag: testTags) {
+        if (tagsMatch(queryTag, testTag)) {
+            return true;
+        }
+    }
+    return false;
+}

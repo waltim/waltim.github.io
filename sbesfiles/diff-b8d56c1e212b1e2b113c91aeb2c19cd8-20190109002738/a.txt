@@ -1,0 +1,10 @@
+
+        @Override
+        public List&lt;String&gt; attributes(final String attribute) {
+              return Lists.transform(this, new Function&lt;E, String&gt;() {
+                  public String apply(E webElement) {
+                      return webElement.attribute(attribute);
+                  }
+              });
+        }
+    

@@ -1,0 +1,12 @@
+    private void postConfigure() {
+        List<Trigger> triggers = settings.getTriggers();
+        for (Trigger trigger : triggers) {
+            eventManager.addIvyListener(trigger, trigger.getEventFilter());
+        }
+
+        for (DependencyResolver resolver : settings.getResolvers()) {
+            if (resolver instanceof BasicResolver) {
+                ((BasicResolver) resolver).setEventManager(eventManager);
+            }
+        }
+    }

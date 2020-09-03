@@ -1,0 +1,17 @@
+    public void prepareAndLaunch(int options) {
+        this.options = options;
+        cancelled = false;
+        if(debugPort != AWPrefs.getDebugDefaultLocalPort()) {
+            debugPort = AWPrefs.getDebugDefaultLocalPort();
+            debugPortChanged = true;
+        } else {
+            debugPortChanged = false;
+        }
+        if(optionBuild()) {
+            showProgress();
+        }
+
+        // Start the thread a little bit later to let
+        // the progress dialog displays first
+        SwingUtilities.invokeLater(() -> startThread());
+    }

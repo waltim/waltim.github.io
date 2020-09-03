@@ -1,0 +1,8 @@
+
+        private static Collection&lt;CharSequenceJavaFileObject&gt; wrap(final Map&lt;String, CharSequence&gt; sources)
+        {
+              return sources.entrySet()
+                  .stream()
+                  .map((e) -&gt; new CharSequenceJavaFileObject(e.getKey(), e.getValue())).collect(toList());
+        }
+    

@@ -1,0 +1,3 @@
+private static boolean isMatchingMethod(String methodName, String[] methodNamePrefixes) {
+    return methodNamePrefixes.stream().anyMatch(methodNamePrefix -> methodName.startsWith(methodNamePrefix));
+}

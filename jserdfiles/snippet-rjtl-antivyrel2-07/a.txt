@@ -1,0 +1,8 @@
+public synchronized String getResolverName(ModuleRevisionId mrid) {
+    ModuleSettings ms = moduleSettings.getRule(mrid, new Filter<ModuleSettings>() {
+        public boolean accept(ModuleSettings o) {
+            return o.getResolverName() != null;
+        }
+    });
+    return ms == null ? defaultResolverName : ms.getResolverName();
+}

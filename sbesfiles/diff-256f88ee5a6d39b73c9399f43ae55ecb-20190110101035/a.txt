@@ -1,0 +1,7 @@
+        // collect all nodes in deps
+        Set nodes = Generics.newHashSet();
+           for (TypedDependency dep: deps) {
+             nodes.add(dep.gov());
+             nodes.add(dep.dep());
+           }
+    

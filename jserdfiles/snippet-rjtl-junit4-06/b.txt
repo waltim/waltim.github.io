@@ -1,0 +1,6 @@
+@Test
+public void runATest() {
+    testWasRun = false;
+    new MainRunner().runWithCheckForSystemExit(()-> { JUnitCore.main("org.junit.tests.running.core.CommandLineTest$Example");});
+    assertTrue(testWasRun);
+}

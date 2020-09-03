@@ -1,0 +1,16 @@
+public void displayPopUp(MouseEvent event) {
+    if(bottomTab.getSelectedIndex() < CLOSING_INDEX_LIMIT)
+        return;
+    if(!event.isPopupTrigger())
+        return;
+
+    JPopupMenu popup = new JPopupMenu();
+    JMenuItem item = new JMenuItem("Close");
+    item.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent event) {
+            closeTab(bottomTab.getSelectedIndex());
+        }
+    });
+    popup.add(item);
+    popup.show(event.getComponent(), event.getX(), event.getY());
+}

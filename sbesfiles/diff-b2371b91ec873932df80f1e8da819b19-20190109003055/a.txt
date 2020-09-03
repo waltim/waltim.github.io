@@ -1,0 +1,10 @@
+
+            if (CollectionUtils.isNotEmpty(produces)) {
+                buildSectionTitle(PRODUCES, docBuilder);
+                docBuilder.newLine();
+                  for (String produce : produces) {
+                      docBuilder.unorderedListItem(literalText(produce));
+                  }
+                docBuilder.newLine();
+            }
+    

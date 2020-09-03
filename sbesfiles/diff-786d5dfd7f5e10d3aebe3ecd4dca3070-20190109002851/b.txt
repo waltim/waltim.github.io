@@ -1,0 +1,4 @@
+
+              SelectionSorter&lt;TestdataSolution, TestdataValue&gt; sorter = (scoreDirector, selectionList)
+                      -&gt; Collections.sort(selectionList, (a, b) -&gt; a.getCode().compareTo(b.getCode()));
+    

@@ -1,0 +1,5 @@
+
+        private Optional&lt;DataView&gt; getUnsafeView(DataQuery path) {
+              return get(path).filter(obj -&gt; obj instanceof DataView).map(obj -&gt; (DataView) obj);
+        }
+    

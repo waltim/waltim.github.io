@@ -1,0 +1,5 @@
+
+        private void initFab() {
+              mFloatingButton.setOnClickListener(v -&gt; mPresenter.addNewApp());
+        }
+    

@@ -1,0 +1,11 @@
+
+              SelectionSorter&lt;TestdataSolution, TestdataValue&gt; sorter = new SelectionSorter&lt;TestdataSolution, TestdataValue&gt;() {
+                  public void sort(ScoreDirector scoreDirector, List&lt;TestdataValue&gt; selectionList) {
+                      Collections.sort(selectionList, new Comparator&lt;TestdataValue&gt;() {
+                          public int compare(TestdataValue a, TestdataValue b) {
+                              return a.getCode().compareTo(b.getCode());
+                          }
+                      });
+                  }
+              };
+    

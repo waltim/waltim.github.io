@@ -1,0 +1,13 @@
+
+        @Override
+        public String getBody() {
+      
+            StringBuilder buffer = new StringBuilder();
+              this.params.forEach((paramName, paramType) -&gt; {
+                  buffer.append(buffer.length() == 0 ? "" : ", ");
+                  buffer.append(paramType).append(" ").append(paramName);
+              });
+      
+              return String.format(DEFAULT_TEMPLATE, this.formatModifiers(modifiers), this.returnType, this.name, buffer.toString()).trim();
+        }
+    

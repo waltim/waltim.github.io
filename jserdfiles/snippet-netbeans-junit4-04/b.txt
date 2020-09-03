@@ -1,0 +1,9 @@
+    public void startTest(Test test) {
+        final int count = test.countTestCases();
+        synchronized (this) {
+            fRunTests += count;
+        }
+        cloneListeners().forEach((each) -> {
+            each.startTest(test);
+        });
+    }

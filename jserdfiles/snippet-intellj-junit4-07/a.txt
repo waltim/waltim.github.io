@@ -1,0 +1,14 @@
+    private void runChildren(final RunNotifier notifier) {
+        final RunnerScheduler currentScheduler = scheduler;
+        try {
+            for (final T each : getFilteredChildren()) {
+                currentScheduler.schedule(new Runnable() {
+                    public void run() {
+                        ParentRunner.this.runChild(each, notifier);
+                    }
+                });
+            }
+        } finally {
+            currentScheduler.finished();
+        }
+    }

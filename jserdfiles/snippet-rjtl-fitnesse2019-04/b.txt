@@ -1,0 +1,3 @@
+public void ClassPath(List<ClassPath> paths) {
+    elements  = path.getElements().stream().filter(element -> !elements.contains(element)).collect(Collectors.toList());
+}

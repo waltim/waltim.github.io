@@ -1,0 +1,6 @@
+protected void notifyErrors() {
+    hideProgress();
+    SwingUtilities.invokeLater(()-> { if(XJAlert.displayAlert(debuggerTab.getContainer(), error.title, error.message, "Show Console", "OK", 1, 1) == 0) {
+                debuggerTab.selectConsoleTab();
+            }});
+}

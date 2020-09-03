@@ -1,0 +1,7 @@
+           // Calculations. (depend on recommended destinations)
+              final List&lt;Calculation&gt; calculations = new ArrayList&lt;&gt;(recommended.size());
+              for (final Destination dest : recommended) {
+                  calculations.add(calculation.resolveTemplate("from", "Moon").resolveTemplate("to", dest.getDestination())
+                          .request().get(Calculation.class));
+              }
+    

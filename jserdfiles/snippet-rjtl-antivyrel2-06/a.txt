@@ -1,0 +1,11 @@
+public Caller[] getAllRealCallers() {
+    Set<Caller> all = new HashSet<>();
+    for (Map<ModuleRevisionId, Caller> callers : callersByRootConf.values()) {
+        for (Caller c : callers.values()) {
+            if (c.isRealCaller()) {
+                all.add(c);
+            }
+        }
+    }
+    return all.toArray(new Caller[all.size()]);
+}

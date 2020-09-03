@@ -1,0 +1,6 @@
+
+        @Override
+        public List&lt;String&gt; attributes(final String attribute) {
+              return stream().map(webElement -&gt; webElement.attribute(attribute)).collect(Collectors.toList());
+        }
+    

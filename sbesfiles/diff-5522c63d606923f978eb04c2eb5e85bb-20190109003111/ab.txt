@@ -1,0 +1,11 @@
+
+      @Validate
+    -  public void start() {
+    +  public void start() throws Exception {
+        LOGGER.info("Creating vertx HTTP server");
+    -    server = vertx.createHttpServer().requestHandler((r) -&gt; {
+    +    HttpServer server = executeWithTCCLSwitch(() -&gt; vertx.createHttpServer());
+    +    server.requestHandler((r) -&gt; {
+          r.response().end("Hello from OSGi !");
+        }).listen(8080);
+    

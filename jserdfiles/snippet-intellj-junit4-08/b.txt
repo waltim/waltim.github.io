@@ -1,0 +1,7 @@
+    public <T> List<T> getAnnotatedFieldValues(Object test,
+            Class<? extends Annotation> annotationClass, Class<T> valueClass) {
+        final List<T> results = new ArrayList<T>();
+        collectAnnotatedFieldValues(test, annotationClass, valueClass,
+                (member, value) -> results.add(value));
+        return results;
+    }

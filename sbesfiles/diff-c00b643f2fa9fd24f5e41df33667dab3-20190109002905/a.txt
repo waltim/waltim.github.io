@@ -1,0 +1,21 @@
+
+        public void deleteProcess(final CloudProcess process) {
+            logger.info("Scheduling delete of process ({}).", process);
+              doProblemFactChange(new ProblemFactChange() {
+                  public void doChange(ScoreDirector scoreDirector) {
+                      CloudBalance cloudBalance = (CloudBalance) scoreDirector.getWorkingSolution();
+                      // Remove the planning entity itself
+                      for (Iterator&lt;CloudProcess&gt; it = cloudBalance.getProcessList().iterator(); it.hasNext(); ) {
+                          CloudProcess workingProcess = it.next();
+                          if (Objects.equals(workingProcess, process)) {
+                              scoreDirector.beforeEntityRemoved(workingProcess);
+                              it.remove(); // remove from list
+                              scoreDirector.afterEntityRemoved(workingProcess);
+                              break;
+                          }
+                    }
+                      scoreDirector.triggerVariableListeners();
+                }
+            });
+        }
+    

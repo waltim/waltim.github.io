@@ -1,0 +1,9 @@
+public JCheckBox createBreakButton(String title) {
+    JCheckBox button = new JCheckBox(title);
+    button.setFocusable(false);
+    button.addActionListener((ActionEvent e)->{ if(getBreakEvent().isEmpty()) {
+                breakAllButton.setSelected(true);
+                AWPrefs.getPreferences().setBoolean(AWPrefs.PREF_DEBUG_BREAK_ALL, true);
+            }});
+    return button;
+}

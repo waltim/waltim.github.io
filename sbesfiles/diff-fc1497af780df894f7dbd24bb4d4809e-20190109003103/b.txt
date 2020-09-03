@@ -1,0 +1,9 @@
+
+            private void initExtensions(Context context) {
+                  extensionRegistry.getSwaggerModelExtensions().forEach(extension -&gt; extension.setGlobalContext(context));
+                  extensionRegistry.getOverviewDocumentExtensions().forEach(extension -&gt; extension.setGlobalContext(context));
+                  extensionRegistry.getDefinitionsDocumentExtensions().forEach(extension -&gt; extension.setGlobalContext(context));
+                  extensionRegistry.getPathsDocumentExtensions().forEach(extension -&gt; extension.setGlobalContext(context));
+                  extensionRegistry.getSecurityDocumentExtensions().forEach(extension -&gt; extension.setGlobalContext(context));
+            }
+    

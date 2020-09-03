@@ -1,0 +1,6 @@
+        public void draw(Graphics2D g) {
+            for (Color c : shapes.keySet()) {
+                g.setColor(c);
+                g.draw(shapes.get(c));
+            }
+        }

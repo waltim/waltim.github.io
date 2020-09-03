@@ -1,0 +1,10 @@
+
+            TestdataSetBasedSolution original = new TestdataSetBasedSolution("solution");
+              Comparator&lt;TestdataValue&gt; valueComparator = new Comparator&lt;TestdataValue&gt;() {
+                  @Override
+                  public int compare(TestdataValue a, TestdataValue b) {
+                      return b.getCode().compareTo(a.getCode()); // Reverse alphabetic
+                  }
+              };
+              Set&lt;TestdataValue&gt; valueSet = new TreeSet&lt;&gt;(valueComparator);
+    

@@ -1,0 +1,7 @@
+public void run() {
+    try {
+        error = submit();
+    } finally {
+        SwingUtilities.invokeLater(()-> { finished();});
+    }
+}

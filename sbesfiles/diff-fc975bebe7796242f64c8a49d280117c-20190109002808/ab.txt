@@ -1,0 +1,19 @@
+-code blob-code-context selected-line">
+            public List&lt;Integer&gt; readFrom(final Class&lt;List&lt;Integer&gt;&gt; type, final Type genericType, final Annotation[] annotations,
+                                          final MediaType mediaType, final MultivaluedMap&lt;String, String&gt; httpHeaders,
+                                          final InputStream entityStream) throws IOException, WebApplicationException {
+    -            return Lists.transform(
+    -                    Arrays.asList(ReaderWriter.readFromAsString(entityStream, mediaType).split(",")),
+    -                    new Function&lt;String, Integer&gt;() {
+    -                        @Override
+    -                        public Integer apply(final String input) {
+    -                            return Integer.valueOf(input.trim());
+    -                        }
+    -                    }
+    -            );
+    +            return Arrays.stream(ReaderWriter.readFromAsString(entityStream, mediaType).split(","))
+    +                         .map(input -&gt; Integer.valueOf(input.trim()))
+    +                         .collect(Collectors.toList());
+            }
+        }
+    

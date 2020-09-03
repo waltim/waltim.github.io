@@ -1,0 +1,3 @@
+public void updateInterfaceLater() {
+    SwingUtilities.invokeLater(()-> { updateInterface();});
+}

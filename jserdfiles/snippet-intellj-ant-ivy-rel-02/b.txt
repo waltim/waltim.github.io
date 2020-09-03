@@ -1,0 +1,13 @@
+    private Collection<ModuleDescriptor> getAllRevisions(ModuleRevisionId id) {
+        Collection<ModuleDescriptor> revisions = modules.get(id.getModuleId());
+        if (revisions == null) {
+            revisions = new TreeSet<>((md1, md2) -> {
+                // we use reverse order compared to latest revision, to have latest revision
+                // first
+                return settings.getDefaultLatestStrategy().sort(new ArtifactInfo[] {md1, md2})
+                        .get(0).equals(md1) ? 1 : -1;
+            });
+            modules.put(id.getModuleId(), revisions);
+        }
+        return revisions;
+    }

@@ -1,0 +1,6 @@
+
+            original.setValueSet(valueSet);
+              Comparator&lt;TestdataSetBasedEntity&gt; entityComparator = (a1, b1) -&gt; {
+                  return b1.getCode().compareTo(a1.getCode()); // Reverse alphabetic
+            };
+    

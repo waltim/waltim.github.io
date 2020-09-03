@@ -1,0 +1,20 @@
+
+        public RxBleConnectionImpl(RxBleRadio rxBleRadio, RxBleGattCallback gattCallback, BluetoothGatt bluetoothGatt) {
+    -
+            this.rxBleRadio = rxBleRadio;
+            this.gattCallback = gattCallback;
+            this.bluetoothGatt = bluetoothGatt;
+    @@ -92,59 +88,64 @@ public RxBleConnectionImpl(RxBleRadio rxBleRadio, RxBleGattCallback gattCallback
+                    return availableObservable;
+                }
+    -            final Observable&lt;Observable&lt;byte[]&gt;&gt; newObservable = createCharacteristicNotificationObservable(characteristicUuid);
+    +            final Observable&lt;Observable&lt;byte[]&gt;&gt; newObservable = createCharacteristicNotificationObservable(characteristicUuid)
+    +                    .doOnUnsubscribe(() -&gt; dismissCharacteristicNotification(characteristicUuid))
+    +                    .cache(1)
+    +                    .share();
+                notificationObservableMap.put(characteristicUuid, newObservable);
+    -
+                return newObservable;
+            }
+        }
+    

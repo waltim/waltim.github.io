@@ -1,0 +1,7 @@
+        public Map<String, String> substitute(Map<String, String> strings) {
+            Map<String, String> substituted = new LinkedHashMap<>();
+            strings.entrySet().forEach((entry) -> {
+                substituted.put(entry.getKey(), substitute(entry.getValue()));
+            });
+            return substituted;
+        }

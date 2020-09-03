@@ -1,0 +1,9 @@
+    private void postConfigure() {
+        List<Trigger> triggers = settings.getTriggers();
+        triggers.forEach((trigger) -> {
+            eventManager.addIvyListener(trigger, trigger.getEventFilter());
+        });
+        settings.getResolvers().stream().filter((resolver) -> (resolver instanceof BasicResolver)).forEachOrdered((resolver) -> {
+            ((BasicResolver) resolver).setEventManager(eventManager);
+        });
+    }

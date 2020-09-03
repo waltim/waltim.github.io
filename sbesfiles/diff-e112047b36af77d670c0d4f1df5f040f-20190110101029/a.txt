@@ -1,0 +1,4 @@
+             for (CRFThread thread : threads) {
+               thread.start();
+             }
+    

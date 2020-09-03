@@ -1,0 +1,6 @@
+      private String expectedAnswer2 =
+              "  yo! C&amp;C!yo! C&amp;C!  ";
+    
+
+        private Function duplicate = (String in)-&gt;{ return in + in;};
+    

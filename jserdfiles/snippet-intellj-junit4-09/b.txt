@@ -1,0 +1,9 @@
+        public void run(TestResult result) {
+            result.startTest(this);
+            Protectable p = () -> {
+                fTestCase.runBare();
+                fTestCase.runBare();
+            };
+            result.runProtected(this, p);
+            result.endTest(this);
+        }

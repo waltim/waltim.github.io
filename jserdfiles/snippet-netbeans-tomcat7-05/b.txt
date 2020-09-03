@@ -1,0 +1,26 @@
+    @Override
+    public Set<String> setInitParameters(Map<String, String> initParameters) {
+
+        Set<String> conflicts = new HashSet<String>();
+
+        initParameters.entrySet().stream().map((entry) -> {
+            if (entry.getKey() == null || entry.getValue() == null) {
+                throw new IllegalArgumentException(sm.getString(
+                        "applicationFilterRegistration.nullInitParams",
+                        entry.getKey(), entry.getValue()));
+            }
+            return entry;
+        }).filter((entry) -> (getInitParameter(entry.getKey()) != null)).forEachOrdered((entry) -> {
+            conflicts.add(entry.getKey());
+        });
+
+        // Have to add in a separate loop since spec requires no updates at all
+        // if there is an issue
+        if (conflicts.isEmpty()) {
+            initParameters.entrySet().forEach((entry) -> {
+                setInitParameter(entry.getKey(), entry.getValue());
+            });
+        }
+
+        return conflicts;
+    }

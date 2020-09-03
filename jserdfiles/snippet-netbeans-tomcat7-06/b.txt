@@ -1,0 +1,18 @@
+    protected Class<?> loadClassMaybePrivileged(final String className, final ClassLoader classLoader) throws ClassNotFoundException {
+        Class<?> clazz;
+        if (SecurityUtil.isPackageProtectionEnabled()) {
+            try {
+                clazz = AccessController.doPrivileged((PrivilegedExceptionAction<Class<?>>) () -> loadClass(className, classLoader));
+            } catch (PrivilegedActionException e) {
+                Throwable t = e.getCause();
+                if (t instanceof ClassNotFoundException) {
+                    throw (ClassNotFoundException) t;
+                }
+                throw new RuntimeException(t);
+            }
+        } else {
+            clazz = loadClass(className, classLoader);
+        }
+        checkAccess(clazz);
+        return clazz;
+    }

@@ -1,0 +1,8 @@
+
+        @Override
+        public Observable&lt;byte[]&gt; writeDescriptor(UUID serviceUuid, UUID characteristicUuid, UUID descriptorUuid, byte[] data) {
+              return discoverServices()
+                    .flatMap(rxBleDeviceServices -&gt; rxBleDeviceServices.getDescriptor(serviceUuid, characteristicUuid, descriptorUuid))
+                      .map(bluetoothGattDescriptor -&gt; bluetoothGattDescriptor.setValue(data)).flatMap(ignored -&gt; Observable.just(data));
+        }
+    

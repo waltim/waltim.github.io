@@ -1,0 +1,8 @@
+public static List ids(SeleniumQueryObject sq) {
+            List ids = new ArrayList&lt;&gt;(sq.size());
+              sq.forEach(element -&gt; {
+                ids.add(id(element));
+              });
+            return ids;
+        }
+    

@@ -1,0 +1,3 @@
+private boolean isShadowed(Method method, List<Method> results) {
+    return results.stream().anyMatch(each -> isShadowed(method, each));
+}

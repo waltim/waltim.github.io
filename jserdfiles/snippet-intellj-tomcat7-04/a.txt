@@ -1,0 +1,15 @@
+    public static Method[] getDeclaredMethods(final Class<?> clazz) {
+        Method[] methods = null;
+        if (Globals.IS_SECURITY_ENABLED) {
+            methods = AccessController.doPrivileged(
+                    new PrivilegedAction<Method[]>(){
+                @Override
+                public Method[] run(){
+                    return clazz.getDeclaredMethods();
+                }
+            });
+        } else {
+            methods = clazz.getDeclaredMethods();
+        }
+        return methods;
+    }

@@ -1,0 +1,16 @@
+  protected Map<Object, Object> cSort(List<?> list, int col) {
+    TypeAdapter a = columnBindings[col].adapter;
+    Map<Object, Object> result = new HashMap<>(list.size());
+    for (Object row : list) {
+      try {
+        a.target = row;
+        Object key = a.get();
+        bin(result, key, row);
+      }
+      catch (Exception e) {
+        // surplus anything with bad keys, including null
+        surplus.add(row);
+      }
+    }
+    return result;
+  }

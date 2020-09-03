@@ -1,0 +1,9 @@
+    
+
+    	public List findWebElements(SearchContext context) {
+    		Set elements = new LinkedHashSet&lt;&gt;();
+      		tagComponents.stream().map(elementsFound -&gt; tagComponent.findWebElements(context)).forEach(elementsFound -&gt; {
+                          elements.addAll(elementsFound);
+                      });
+    		return new ArrayList&lt;&gt;(elements);
+    

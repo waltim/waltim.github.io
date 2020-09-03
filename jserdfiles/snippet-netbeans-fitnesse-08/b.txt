@@ -1,0 +1,8 @@
+  @Override
+  public void create(final String instanceName, final String className, final Object... constructorArgs) throws SlimException {
+    Future<?> submit = service.submit(() -> {
+        inner.create(instanceName, className, constructorArgs);
+        return true;
+    });
+    getWithTimeout(submit);
+  }

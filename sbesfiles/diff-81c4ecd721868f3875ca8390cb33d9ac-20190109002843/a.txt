@@ -1,0 +1,8 @@
+
+        @Produces
+        @CustomHumanTaskService
+        @Override
+        public CommandBasedTaskService produceTaskService() {
+              return super.produceTaskService();
+        }
+    

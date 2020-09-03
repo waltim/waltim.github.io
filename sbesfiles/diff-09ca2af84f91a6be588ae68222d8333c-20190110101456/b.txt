@@ -1,0 +1,9 @@
+        private static String[] ids(String selector) {
+            SeleniumQueryObject f = $(selector);
+            List actualIds = new ArrayList&lt;&gt;();
+              f.forEach(webElement -&gt; {
+                actualIds.add(id(webElement));
+              });
+            return actualIds.toArray(new String[actualIds.size()]);
+        }
+    

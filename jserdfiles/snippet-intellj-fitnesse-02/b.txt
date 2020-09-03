@@ -1,0 +1,15 @@
+  @Override
+  public boolean shouldAuthenticate(FitNesseContext context, Request request) {
+    WikiPagePath path = PathParser.parse(request.getResource());
+    PageCrawler crawler = context.getRootPage().getPageCrawler();
+    WikiPage page = crawler.getPage(path, new MockingPageCrawler());
+    if (page == null)
+      return false;
+
+    final boolean[] found = new boolean[1];
+    page.getPageCrawler().traversePageAndAncestors(page1 -> {
+      if (hasSecurityModeAttribute(page1))
+        found[0] = true;
+    });
+    return found[0];
+  }

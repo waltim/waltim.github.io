@@ -1,0 +1,23 @@
+                @Override
+                public void onFailure(Exception t) {
+                    logger.warn((Supplier) () -&gt; new ParameterizedMessage("Failed to clear scroll [{}]", scrollId), t);
+                public void onFailure(Exception e) {
+                    logFailure(e);
+                    onCompletion.run();
+                }
+    
+                private void logFailure(Exception e) {
+                    if (e instanceof ResponseException) {
+                        ResponseException re = (ResponseException) e;
+                        if (remoteVersion.before(Version.V_2_0_0) &amp;&amp; re.getResponse().getStatusLine().getStatusCode() == 404) {
+                            logger.debug((Supplier) () -&gt; new ParameterizedMessage(
+                                    "Failed to clear scroll [{}] from pre-2.0 Elasticsearch. This is normal if the request terminated "
+                                         "normally as the scroll has already been cleared automatically.", scrollId), e);
+                            return;
+                        }
+                    }
+                    logger.warn((Supplier) () -&gt; new ParameterizedMessage("Failed to clear scroll [{}]", scrollId), e);
+                }
+            });
+        }
+    

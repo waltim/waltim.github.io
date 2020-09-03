@@ -1,0 +1,12 @@
+  public List<String> getPotentialFixtureClassNames(Set<String> fixturePathElements) {
+    List<String> candidateClassNames = new ArrayList<>();
+
+    if (!isFullyQualified()) {
+        fixturePathElements.forEach((packageName) -> {
+            addBlahAndBlahFixture(packageName + ".", candidateClassNames);
+        });
+    }
+    addBlahAndBlahFixture("", candidateClassNames);
+
+    return candidateClassNames;
+  }

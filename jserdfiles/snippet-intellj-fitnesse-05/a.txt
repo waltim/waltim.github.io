@@ -1,0 +1,8 @@
+  public void test(){
+	  XmlizePageCondition xmlizePageCondition = new XmlizePageCondition() {
+		@Override
+		public boolean canBeXmlized(WikiPage page) {
+		  return !(page instanceof SymbolicPage);
+		}
+	  };
+  }

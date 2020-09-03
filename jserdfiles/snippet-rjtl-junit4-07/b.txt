@@ -1,0 +1,4 @@
+private void runClass(final String className, int returnCode) {
+    Integer exitValue = new MainRunner().runWithCheckForSystemExit(()-> { JUnitCore.main(className);});
+    assertEquals(Integer.valueOf(returnCode), exitValue);
+}

@@ -1,0 +1,26 @@
+    private static Method getMethod(final Class<?> clazz,
+            final AnnotationCacheEntry entry) {
+        Method result = null;
+        if (Globals.IS_SECURITY_ENABLED) {
+            result = AccessController.doPrivileged((PrivilegedAction<Method>) () -> {
+                Method result1 = null;
+                try {
+                    result1 = clazz.getDeclaredMethod(
+                            entry.getAccessibleObjectName(),
+                            entry.getParamTypes());
+                }catch (NoSuchMethodException e) {
+                    // Should never happen. On that basis don't log
+                    // it.
+                }
+                return result1;
+            });
+        } else {
+            try {
+                result = clazz.getDeclaredMethod(
+                        entry.getAccessibleObjectName(), entry.getParamTypes());
+            } catch (NoSuchMethodException e) {
+                // Should never happen. On that basis don't log it.
+            }
+        }
+        return result;
+    }

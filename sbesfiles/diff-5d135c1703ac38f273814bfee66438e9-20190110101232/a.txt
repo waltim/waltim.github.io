@@ -1,0 +1,9 @@
+      protected void addInstances(Collection&gt; datums) {
+           for (RVFDatum datum : datums) {
+             K label = datum.label();
+             Counter vec = datum.asFeaturesCounter();
+             instances.add(label, vec);
+             classLookup.put(vec, label);
+        }
+         }
+    

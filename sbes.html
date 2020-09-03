@@ -4,9 +4,13 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="css/jserd-sbes.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="syntaxhighlighter/styles/shCoreEclipse.css">
 </head>
 
 <body>
@@ -72,13 +76,53 @@
             </tfoot>
         </table>
     </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 id="number-snippet" class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h5>Code before:</h5>
+                    <div id="before" class="col-md-12">
+    
+                    </div>
+                    <h5>Code after:</h5>
+                    <div id="after" class="col-md-12">
+
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </body>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script type="text/javascript" src="syntaxhighlighter/scripts/XRegExp.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushDiff.js"></script>
 
-<script>
+<script type="text/javascript">
     $.getJSON("database/sbes.json", function (data) {
         $.each(data, function (key, val) {
             $("#snippets").find('tbody').append($("<tr>" + "<td>" + data[key].Transformation + "</td>" +
@@ -91,12 +135,41 @@
                 "<td>" + data[key].Posnet_After + "</td>" +
                 "<td>" + data[key].RayBuse_Before + "</td>" +
                 "<td>" + data[key].RayBuse_After + "</td>" +
-                "<td>" + data[key].diff_id + "</td>" +
+                "<td>" + "<button type='button' id='" + data[key].Transformation + "' data-val='" + data[key].diff_id + "' class='snippet btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'> View snippets </button>" + "</td>" +
                 "</tr>"));
+
         });
     }).done(function () {
         $(document).ready(function () {
             $('#snippets').DataTable();
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $('#myModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var id = button[0].id;
+        var path = button[0].attributes[2].nodeValue;
+        $("#number-snippet").text("Transformation "+id);
+        $.get('sbesfiles/' + path + '/a.txt', function (data) {
+            $("#before").html("");
+            $("#before").append($("<xmp id='code1' class='brush: java'>" + data + "</xmp>"));
+        });
+        $.get('sbesfiles/' + path + '/b.txt', function (data) {
+            $("#after").html("");
+            $("#after").append($("<xmp id='code2' class='brush: java'>" + data + "</xmp>"));
+        }).done(function () {
+            $(document).ready(function () {
+                SyntaxHighlighter.defaults['gutter'] = false;
+                SyntaxHighlighter.defaults['toolbar'] = false;
+                SyntaxHighlighter.config.bloggerMode = true;
+                SyntaxHighlighter.defaults['diff'] = [1, 2.3];
+                var element1 = document.getElementById('code1');
+                var element2 = document.getElementById('code2');
+                SyntaxHighlighter.highlight(undefined, element1);
+                SyntaxHighlighter.highlight(undefined, element2);
+            });
         });
     });
 </script>

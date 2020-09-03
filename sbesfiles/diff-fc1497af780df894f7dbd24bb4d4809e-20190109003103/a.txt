@@ -1,0 +1,18 @@
+
+            private void initExtensions(Context context) {
+                  for (SwaggerModelExtension extension : extensionRegistry.getSwaggerModelExtensions())
+                      extension.setGlobalContext(context);
+      
+                  for (OverviewDocumentExtension extension : extensionRegistry.getOverviewDocumentExtensions())
+                      extension.setGlobalContext(context);
+      
+                  for (DefinitionsDocumentExtension extension : extensionRegistry.getDefinitionsDocumentExtensions())
+                      extension.setGlobalContext(context);
+      
+                  for (PathsDocumentExtension extension : extensionRegistry.getPathsDocumentExtensions())
+                      extension.setGlobalContext(context);
+      
+                  for (SecurityDocumentExtension extension : extensionRegistry.getSecurityDocumentExtensions())
+                      extension.setGlobalContext(context);
+            }
+    

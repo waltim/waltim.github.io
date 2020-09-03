@@ -1,0 +1,11 @@
+  @Override
+  public void create(final String instanceName, final String className, final Object... constructorArgs) throws SlimException {
+    Future<?> submit = service.submit(new Callable<Boolean>() {
+      @Override
+      public Boolean call() throws Exception {
+        inner.create(instanceName, className, constructorArgs);
+        return true;
+      }
+    });
+    getWithTimeout(submit);
+  }

@@ -1,0 +1,12 @@
+    public void rewind(int start) {
+        currentTokenIndex = start;
+        /** Remove any consume and lookahead attribute for any token with index
+         * greater than start
+         */
+        inputTokenIndexes.stream().filter((idx) -> (idx >= start)).map((idx) -> {
+            indexToConsumeAttributeMap.remove(idx);
+            return idx;
+        }).forEachOrdered((idx) -> {
+            lookaheadTokenIndexes.remove(idx);
+        });
+    }

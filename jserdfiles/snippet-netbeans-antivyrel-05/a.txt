@@ -1,0 +1,18 @@
+    public void updateProject(String id) {
+        Map<String, String> r = new HashMap<>(super.getVariables());
+        r.putAll(overwrittenProperties);
+        for (Map.Entry<String, String> entry : r.entrySet()) {
+            setPropertyIfNotSet(entry.getKey(), entry.getValue());
+            if (id != null) {
+                setPropertyIfNotSet(entry.getKey() + "." + id, entry.getValue());
+            }
+        }
+
+        if (getEnvironmentPrefix() != null) {
+            Property propTask = new Property();
+            propTask.setProject(project);
+            propTask.setEnvironment(getEnvironmentPrefix());
+            propTask.init();
+            propTask.execute();
+        }
+    }

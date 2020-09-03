@@ -1,0 +1,25 @@
+        @Override
+          protected FieldCapabilitiesIndexResponse shardOperation(
+                  final FieldCapabilitiesIndexRequest request, ShardId shardId) {
+            MapperService mapperService = indicesService.indexServiceSafe(shardId.getIndex()).mapperService();
+            Set fieldNames = new HashSet&lt;&gt;();
+            for (String field : request.fields()) {
+                fieldNames.addAll(mapperService.simpleMatchToIndexNames(field));
+            }
+            Map responseMap = new HashMap&lt;&gt;();
+              fieldNames.forEach(
+                      field -&gt; {
+                          MappedFieldType ft = mapperService.fullName(field);
+                          if (ft != null) {
+                              FieldCapabilities fieldCap =
+                                      new FieldCapabilities(
+                                              field,
+                                              ft.typeName(),
+                                              ft.isSearchable(),
+                                              ft.isAggregatable());
+                              responseMap.put(field, fieldCap);
+                          }
+                      });
+            return new FieldCapabilitiesIndexResponse(shardId.getIndexName(), responseMap);
+        }
+    

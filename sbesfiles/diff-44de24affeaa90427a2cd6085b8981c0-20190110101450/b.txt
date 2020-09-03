@@ -1,0 +1,16 @@
+    
+
+      	public static SeleniumQueryObject closest(SeleniumQueryObject caller, String selector)  {
+    		List elements = caller.get();
+    		WebDriver driver = caller.getWebDriver();
+    
+
+    		List closests = new ArrayList&lt;&gt;(elements.size());
+      		elements.stream().map(closestElement -&gt; closest(driver, element, selector)).filter(closestElement -&gt; closestElement != null).forEach(closestElement -&gt; {
+    				closests.add(closestElement);
+      			});
+    
+
+    		return SqObjectFactory.instance().createWithInvalidSelector(caller.getWebDriver(), closests, caller);
+
+    

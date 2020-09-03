@@ -1,0 +1,6 @@
+
+            TestdataSetBasedSolution original = new TestdataSetBasedSolution("solution");
+              Set&lt;TestdataValue&gt; valueSet = new TreeSet&lt;&gt;((a1, b1) -&gt; {
+                  return b1.getCode().compareTo(a1.getCode()); // Reverse alphabetic
+              });
+    

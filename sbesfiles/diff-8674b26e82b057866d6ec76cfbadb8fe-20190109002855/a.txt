@@ -1,0 +1,17 @@
+
+              SelectionProbabilityWeightFactory&lt;DummyMove&gt; probabilityWeightFactory = new SelectionProbabilityWeightFactory&lt;DummyMove&gt;() {
+                  public double createProbabilityWeight(ScoreDirector scoreDirector, DummyMove move) {
+                      if (move.getCode().equals("e1")) {
+                        return 1000.0;
+                      } else if (move.getCode().equals("e2")) {
+                        return 200.0;
+                      } else if (move.getCode().equals("e3")) {
+                        return 30.0;
+                      } else if (move.getCode().equals("e4")) {
+                        return 4.0;
+                      } else {
+                        throw new IllegalStateException("Unknown move (" + move + ").");
+                      }
+                }
+            };
+    

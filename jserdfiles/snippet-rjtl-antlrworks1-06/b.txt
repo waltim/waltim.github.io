@@ -1,0 +1,4 @@
+public void recorderStatusDidChange() {
+    if(closing) return;
+    SwingUtilities.invokeLater(()-> { updateStatusInfo();});
+}

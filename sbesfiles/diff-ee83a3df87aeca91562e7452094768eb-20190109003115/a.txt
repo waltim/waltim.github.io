@@ -1,0 +1,9 @@
+
+        // We should unregister all deployed verticles.
+    @@ -26,12 +30,23 @@ public void stop() {
+      @Bind(aggregate = true)
+      public void bindVerticle(Verticle verticle) {
+        LOGGER.info("Deploying verticle " + verticle);
+          vertx.deployVerticle(verticle);
+      }
+    

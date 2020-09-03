@@ -1,0 +1,8 @@
+private boolean isShadowed(Method method, List<Method> results) {
+    for (Method each : results) {
+        if (isShadowed(method, each)) {
+            return true;
+        }
+    }
+    return false;
+}

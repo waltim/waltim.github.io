@@ -1,0 +1,10 @@
+
+            final List&lt;Object&gt; valueList = Arrays.&lt;Object&gt;asList(values);
+    -        when(valueSelector.iterator(any())).thenAnswer(new Answer&lt;Iterator&lt;Object&gt;&gt;() {
+    -            @Override
+    -            public Iterator&lt;Object&gt; answer(InvocationOnMock invocation) throws Throwable {
+    -                return valueList.iterator();
+    -            }
+    -        });
+    +        when(valueSelector.iterator(any())).thenAnswer(invocation -&gt; valueList.iterator());
+    

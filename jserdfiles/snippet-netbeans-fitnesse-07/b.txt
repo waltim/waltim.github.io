@@ -1,0 +1,12 @@
+  private void acceptMany() throws IOException {
+    while (true) {
+      final Socket socket = serverSocket.accept();
+      executor.execute(() -> {
+          try {
+              handle(socket);
+          } catch (IOException e) {
+              throw new SlimError(e);
+          }
+      });
+    }
+  }

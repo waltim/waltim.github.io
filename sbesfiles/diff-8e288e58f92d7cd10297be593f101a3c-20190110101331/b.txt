@@ -1,0 +1,18 @@
+                assertEquals(0, options.getOffset());
+                assertEquals(4, options.getLength());
+                assertEquals(2 ,options.getOptions().size());
+                  options.stream()
+                          .map(
+                                  option -&gt; {
+                                      assertThat(option.getScore(), greaterThan(0f));
+                                      return option;
+                                  })
+                          .forEach(
+                                  option -&gt; {
+                                      assertThat(
+                                              option.getText().string(),
+                                              either(equalTo("type1")).or(equalTo("type2")));
+                                  });
+            }
+        }
+    

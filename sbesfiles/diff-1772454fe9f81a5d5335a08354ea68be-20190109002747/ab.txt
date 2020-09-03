@@ -1,0 +1,14 @@
+
+        private void createReminderAlarmsDelayed(final Context context)
+        {
+    -        new Handler().postDelayed(new Runnable()
+    -        {
+    -            @Override
+    -            public void run()
+    -            {
+    -                ReminderUtils.createReminderAlarms(context);
+    -            }
+    -        }, 5000);
+    +        new Handler().postDelayed(() -&gt; ReminderUtils.createReminderAlarms(context), 5000);
+        }
+    

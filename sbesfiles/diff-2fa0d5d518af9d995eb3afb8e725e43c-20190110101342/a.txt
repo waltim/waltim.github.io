@@ -1,0 +1,12 @@
+    
+
+           private List buildSimpleSnapshotInfos(final Set toResolve,
+                                                               final RepositoryData repositoryData,
+                                                               final List currentSnapshots) {
+            List snapshotInfos = new ArrayList&lt;&gt;();
+               for (SnapshotInfo snapshotInfo : currentSnapshots) {
+                   if (toResolve.remove(snapshotInfo.snapshotId())) {
+                       snapshotInfos.add(snapshotInfo.basic());
+                   }
+               }
+    

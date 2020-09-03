@@ -1,0 +1,13 @@
+        // collect all nodes in deps
+        Set nodes = Generics.newHashSet();
+          deps.stream()
+              .map(
+                  dep -&gt; {
+                    nodes.add(dep.gov());
+                    return dep;
+                  })
+              .forEach(
+                  dep -&gt; {
+                    nodes.add(dep.dep());
+                  });
+    

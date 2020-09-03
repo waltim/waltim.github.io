@@ -1,0 +1,8 @@
+
+      @Validate
+        public void start() {
+        LOGGER.info("Creating vertx HTTP server");
+          server = vertx.createHttpServer().requestHandler((r) -&gt; {
+          r.response().end("Hello from OSGi !");
+        }).listen(8080);
+    

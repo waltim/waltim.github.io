@@ -1,0 +1,3 @@
+private boolean containsTag(String[] testTags, String queryTag) {
+    return testTags.stream().anyMatch(testTag -> tagsMatch(queryTag, testTag));
+}

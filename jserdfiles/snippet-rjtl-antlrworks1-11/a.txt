@@ -1,0 +1,9 @@
+public void updateOnBreakEvent() {
+    eventTableDataModel.update();
+
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            selectLastInfoTableItem();
+        }
+    });
+}

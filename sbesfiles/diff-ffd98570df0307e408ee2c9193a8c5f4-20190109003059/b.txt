@@ -1,0 +1,9 @@
+
+        @Override
+          public MarkupDocBuilder apply(MarkupDocBuilder markupDocBuilder, Parameters params){
+              markupDocBuilder.sectionTitleLevel(params.titleLevel, labels.getString(Labels.PRODUCES));
+              markupDocBuilder.unorderedList(params.produces.stream()
+                      .map(value -&gt; literalText(markupDocBuilder, value)).collect(Collectors.toList()));
+            return markupDocBuilder;
+        }
+    

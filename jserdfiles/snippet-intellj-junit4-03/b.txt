@@ -1,0 +1,9 @@
+    public void test(){
+		Comparator<Method> NAME_ASCENDING = (m1, m2) -> {
+			final int comparison = m1.getName().compareTo(m2.getName());
+			if (comparison != 0) {
+				return comparison;
+			}
+			return m1.toString().compareTo(m2.toString());
+		};
+    }

@@ -1,0 +1,4 @@
+public void dialogWillCloseCancel() {
+    SwingUtilities.invokeLater(()-> { if(delegate != null)
+                delegate.reportsCancelled();});
+}

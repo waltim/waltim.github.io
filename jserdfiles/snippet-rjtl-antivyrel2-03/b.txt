@@ -1,0 +1,3 @@
+public boolean hasError() {
+    return confReports.values().stream().anyMatch(report -> report.hasError());
+}

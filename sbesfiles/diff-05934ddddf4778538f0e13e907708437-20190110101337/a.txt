@@ -1,0 +1,12 @@
+    
+
+            assertEquals(numRequests, responses.size());
+               for (TestResponse testResponse : responses) {
+                   Response response = testResponse.getResponse();
+                   assertEquals(testResponse.method, response.getRequestLine().getMethod());
+                   assertEquals(testResponse.statusCode, response.getStatusLine().getStatusCode());
+                   assertEquals((pathPrefix.length() &gt; 0 ? pathPrefix : "") + "/" + testResponse.statusCode,
+                           response.getRequestLine().getUri());
+               }
+        }
+    

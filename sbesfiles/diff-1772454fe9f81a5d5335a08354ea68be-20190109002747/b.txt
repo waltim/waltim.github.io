@@ -1,0 +1,6 @@
+
+        private void createReminderAlarmsDelayed(final Context context)
+        {
+              new Handler().postDelayed(() -&gt; ReminderUtils.createReminderAlarms(context), 5000);
+        }
+    

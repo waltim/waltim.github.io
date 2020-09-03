@@ -1,0 +1,6 @@
+
+        @Override
+          public void put(K k, V v, long timeout, Handler&lt;AsyncResult&lt;Void&gt;&gt; completionHandler) {
+            put(k, v, timeout).setHandler(completionHandler);
+        }
+    

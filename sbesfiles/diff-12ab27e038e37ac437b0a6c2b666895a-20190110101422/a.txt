@@ -1,0 +1,10 @@
+        public List findElements(SearchContext context, String selector) {
+            CssSelectorList parse = ParseTreeBuilder.parse(selector);
+            Set elements = new LinkedHashSet&lt;&gt;();
+               for (CssSelector s : parse) {
+                   List elementsFound = s.toElementFinder((WebDriver) context).findWebElements(context);
+                elements.addAll(elementsFound);
+               }
+            return new ArrayList&lt;&gt;(elements);
+        }
+    

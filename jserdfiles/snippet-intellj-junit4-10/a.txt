@@ -1,0 +1,16 @@
+    private static Result runTest(final Class<?> testClass) {
+        Future<Result> future = executorService.submit(new Callable<Result>() {
+            public Result call() throws Exception {
+                JUnitCore core = new JUnitCore();
+                return core.run(testClass);
+            }
+        });
+
+        try {
+            return future.get();
+        } catch (InterruptedException e) {
+            throw new RuntimeException("Could not run test " + testClass, e);
+        } catch (ExecutionException e) {
+            throw new RuntimeException("Could not run test " + testClass, e);
+        }
+    }

@@ -1,0 +1,19 @@
+
+    	public void afterPropertiesSet() throws Exception {
+    		this.sftpFolder.create();
+    		this.localFolder.create();
+      		server.setPasswordAuthenticator(new PasswordAuthenticator() {
+      
+      			@Override
+      			public boolean authenticate(String arg0, String arg1, ServerSession arg2) {
+      				return true;
+      			}
+      
+      		});
+    		server.setPort(0);
+      		server.setKeyPairProvider(new SimpleGeneratorHostKeyProvider("hostkey.ser"));
+      		this.server.setSubsystemFactories(Collections.&lt;NamedFactory&lt;Command&gt;&gt;singletonList(new SftpSubsystem.Factory()));
+      		this.server.setFileSystemFactory(new VirtualFileSystemFactory(sftpRootFolder.getAbsolutePath()));
+    		server.start();
+    	}
+    

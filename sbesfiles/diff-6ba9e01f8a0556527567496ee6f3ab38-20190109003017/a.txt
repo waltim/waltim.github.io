@@ -1,0 +1,5 @@
+
+        private long getNumMessagesWithSeverity(Severity severity) {
+              return msgBuffer.values().stream().filter(msg -&gt; msg.getSeverity().equals(severity)).count();
+        }
+    

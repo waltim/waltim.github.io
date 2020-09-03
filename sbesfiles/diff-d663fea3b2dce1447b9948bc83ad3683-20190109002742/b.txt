@@ -1,0 +1,10 @@
+
+        public ListField(String name, String humanName, List&lt;String&gt; defaultValue, Map&lt;String, String&gt; values, String description, Optional isOptional, Attribute... attributes) {
+            super(FIELD_TYPE, name, humanName, description, isOptional);
+            this.defaultValue = defaultValue;
+            this.values = values;
+              this.attributes = Arrays.stream(attributes)
+                      .map(attribute -&gt; attribute.toString().toLowerCase(Locale.ENGLISH))
+                      .collect(Collectors.toList());
+        }
+    

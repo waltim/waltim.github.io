@@ -1,0 +1,3 @@
+public void connectionSuccess() {
+    SwingUtilities.invokeLater(()-> { debuggerTab.connectionSuccess();});
+}

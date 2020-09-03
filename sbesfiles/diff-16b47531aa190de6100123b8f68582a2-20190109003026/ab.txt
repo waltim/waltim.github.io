@@ -1,0 +1,16 @@
+
+        @Override
+        public DataContainer copy() {
+            final DataContainer container = new MemoryDataContainer();
+    -        for (DataQuery query : getKeys(false)) {
+    -            container.set(query, get(query).get());
+    -        }
+    +        getKeys(false).stream()
+    +                .forEach(query -&gt;
+    +                        get(query).ifPresent(obj -&gt;
+    +                                container.set(query, obj)
+    +                        )
+    +        );
+            return container;
+        }
+    

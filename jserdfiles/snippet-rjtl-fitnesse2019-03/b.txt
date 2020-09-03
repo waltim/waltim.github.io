@@ -1,0 +1,4 @@
+@Override // from WikiPageFactory
+public boolean supports(File path) {
+    return wikiPageFactories.stream().anyMatch(factory -> factory.supports(path));
+}

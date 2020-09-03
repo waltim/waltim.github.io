@@ -1,0 +1,7 @@
+    @Override
+    public boolean addToQueue(ChannelMessage msg, Member[] destination, InterceptorPayload payload) {
+        final LinkObject obj = new LinkObject(msg,destination,payload);
+        Runnable r = () -> sendAsyncData(obj);
+        executor.execute(r);
+        return true;
+    }

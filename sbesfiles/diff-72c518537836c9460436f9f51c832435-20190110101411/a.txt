@@ -1,0 +1,10 @@
+    
+
+    	public List findWebElements(SearchContext context) {
+    		Set elements = new LinkedHashSet&lt;&gt;();
+       		for (TagComponent tagComponent : tagComponents) {
+       			List elementsFound = tagComponent.findWebElements(context);
+       			elements.addAll(elementsFound);
+       		}
+    		return new ArrayList&lt;&gt;(elements);
+    

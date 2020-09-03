@@ -1,0 +1,23 @@
+
+         */
+        @Override
+    -    public EndpointProfileDto updateProfile(SyncContext context) {
+    +    public SyncContext syncProfileServerHash(SyncContext context) {
+            EndpointProfileDto profile = context.getEndpointProfile();
+            if (!operationServerHash.equals(profile.getServerHash())) {
+                LOG.debug("[{}] Operations server hash changed from {} to {}", context.getEndpointKey(), profile.getServerHash(),
+                        operationServerHash);
+                profile.setServerHash(operationServerHash);
+    -            context.setUpdateProfileRequired(true);
+    -        }
+    -
+    -        if (context.isUpdateProfileRequired()) {
+    -            context.setEndpointProfile(profileService.updateProfile(profile));
+    +            context.setEndpointProfile(profileService.updateProfile(profile, (storedProfile, newProfile) -&gt; {
+    +                return storedProfile;
+    +            }));
+            }
+    -        return context.getEndpointProfile();
+    +        return context;
+        }
+    

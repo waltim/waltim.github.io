@@ -1,0 +1,8 @@
+
+        @Override
+    -    public void put(K k, V v, long timeout, Handler&lt;AsyncResult&lt;Void&gt;&gt; completionHandler) {
+    -      put(k, v, timeout).setHandler(completionHandler);
+    +    public void replace(K k, V v, Handler&lt;AsyncResult&lt;V&gt;&gt; resultHandler) {
+    +      vertx.executeBlocking(fut -&gt; fut.complete(map.replace(k, v)), resultHandler);
+        }
+    

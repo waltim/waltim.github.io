@@ -1,0 +1,8 @@
+ private static boolean isAssignableToAnyOf(Class<?>[] typeArray, Object target) {
+    for (Class<?> type : typeArray) {
+        if (type.isAssignableFrom(target.getClass())) {
+            return true;
+        }
+    }
+    return false;
+}

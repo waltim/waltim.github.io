@@ -1,0 +1,8 @@
+    	public static SeleniumQueryObject val(SeleniumQueryObject seleniumQueryObject, List elements, String value) {
+    		LOGGER.debug("Setting value of "+ seleniumQueryObject +" to: \""+value+"\".");
+       		for (WebElement element : elements) {
+                   changeElementValue(seleniumQueryObject.getWebDriver(), element, value);
+       		}
+    		return seleniumQueryObject;
+    	}
+    

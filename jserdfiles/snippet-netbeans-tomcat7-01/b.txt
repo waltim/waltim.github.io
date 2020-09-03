@@ -1,0 +1,9 @@
+		public void test(){
+			String cacheSizeStr;
+			if (System.getSecurityManager() == null) {
+				cacheSizeStr = System.getProperty(CACHE_SIZE_PROP, "1000");
+			} else {
+				cacheSizeStr = AccessController.doPrivileged((PrivilegedAction<String>) () -> System.getProperty(CACHE_SIZE_PROP, "1000"));
+			}
+			CACHE_SIZE = Integer.parseInt(cacheSizeStr);
+		}

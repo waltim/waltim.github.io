@@ -1,0 +1,17 @@
+>
+            @Override
+            protected Iterable&lt;String&gt; getChoices(CommandSource source) {
+    -            return Iterables.transform(this.game.getRegistry().getAllOf(this.catalogType), new Function&lt;T, String&gt;() {
+    -                @Nullable
+    -                @Override
+    -                public String apply(@Nullable T input) {
+    -                    return input == null ? null : input.getId(); // TODO: ids or names?
+    -                }
+    -            });
+    +            return this.game.getRegistry().getAllOf(this.catalogType).stream()
+    +                .map(input -&gt; {
+    +                return input == null ? null : input.getId(); // TODO: ids or names?
+    +                })
+    +                .collect(Collectors.toList());
+            }
+    

@@ -1,0 +1,10 @@
+      private String expectedAnswer2 =
+              "  yo! C&amp;C!yo! C&amp;C!  ";
+    
+
+         private Function duplicate = new Function() {
+           public String apply(String in) {
+             return in + in;
+           }
+         };
+    

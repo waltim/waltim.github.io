@@ -1,0 +1,3 @@
+public boolean isNamespaceUseful() {
+    return dependencies.stream().anyMatch(dd -> dd.getAllExcludeRules().length > 0);
+}

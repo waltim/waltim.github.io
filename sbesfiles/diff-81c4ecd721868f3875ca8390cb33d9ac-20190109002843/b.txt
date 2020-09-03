@@ -1,0 +1,12 @@
+
+        @Produces
+        @CustomHumanTaskService
+        @Override
+        public CommandBasedTaskService produceTaskService() {
+              CommandBasedTaskService taskServiceMock = Mockito.mock(CommandBasedTaskService.class);
+              Mockito.when(taskServiceMock.execute(Mockito.any())).thenAnswer((InvocationOnMock invocation) -&gt; {
+                  throw new CustomTaskServiceInUse();
+              });
+              return taskServiceMock;
+        }
+    

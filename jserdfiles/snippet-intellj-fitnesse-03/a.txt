@@ -1,0 +1,9 @@
+  @Override
+  public void registerResponders(final ResponderFactory responderFactory) throws PluginException {
+    forEachNamedObject(ConfigurationParameter.RESPONDERS, new KeyRegistrar() {
+      @Override public void register(String key, Class clazz) {
+        responderFactory.addResponder(key, clazz);
+        LOG.info("Loaded responder " + key + ": " + clazz.getName());
+      }
+    });
+  }

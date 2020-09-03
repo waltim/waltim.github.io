@@ -1,0 +1,14 @@
+
+        @Test
+        public void testExportCSV() throws Throwable
+        {
+              ExportDBTask task = new ExportDBTask(filename -&gt; {
+                  assertThat(filename, is(not(nullValue())));
+                  File f = new File(filename);
+                  assertTrue(f.exists());
+                  assertTrue(f.canRead());
+            });
+              taskRunner.execute(task);
+            waitForAsyncTasks();
+        }
+    

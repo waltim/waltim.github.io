@@ -1,0 +1,7 @@
+
+        @Provides @NonNull @Singleton
+        public HttpLoggingInterceptor provideHttpLoggingInterceptor() {
+              HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(message -&gt; Timber.d(message));
+            httpLoggingInterceptor.setLevel(BuildConfig.DEBUG ? BODY : NONE);
+            return httpLoggingInterceptor;
+    

@@ -1,0 +1,3 @@
+    public void sort(final Sorter sorter) {
+        Collections.sort(testMethods, (o1, o2) -> sorter.compare(methodDescription(o1), methodDescription(o2)));
+    }

@@ -1,0 +1,8 @@
+
+        @Override
+          public Future&lt;Void&gt; put(K k, V v, long timeout) {
+            Future&lt;Void&gt; fut = put(k, v);
+            vertx.setTimer(timeout, tid -&gt; map.remove(k));
+            return fut;
+        }
+    

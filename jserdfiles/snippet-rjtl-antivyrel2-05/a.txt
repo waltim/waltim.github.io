@@ -1,0 +1,8 @@
+boolean canExclude(String rootModuleConf) {
+    for (Caller caller : getCallers(rootModuleConf)) {
+        if (caller.canExclude()) {
+            return true;
+        }
+    }
+    return false;
+}

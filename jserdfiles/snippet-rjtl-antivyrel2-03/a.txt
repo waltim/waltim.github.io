@@ -1,0 +1,8 @@
+public boolean hasError() {
+    for (ConfigurationResolveReport report : confReports.values()) {
+        if (report.hasError()) {
+            return true;
+        }
+    }
+    return false;
+}

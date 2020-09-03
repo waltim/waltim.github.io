@@ -1,0 +1,3 @@
+boolean canExclude(String rootModuleConf) {
+    return getCallers(rootModuleConf).stream().anyMatch(caller -> caller.canExclude());
+}

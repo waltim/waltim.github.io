@@ -1,0 +1,10 @@
+      public void testMultiWordNormalization() {
+        for (Pair testCase : multiWordTestCases) {
+          Tree head = readTree(testCase.first());
+            head.stream()
+                .filter(t -&gt; t.isPrePreTerminal())
+                .forEach(
+                    t -&gt; {
+                      tn.normalizeForMultiWord(t, tf);
+                    });
+    

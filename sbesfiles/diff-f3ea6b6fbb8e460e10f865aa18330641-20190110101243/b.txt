@@ -1,0 +1,12 @@
+    
+
+            Counter&gt; goldCounts = new ClassicCounter&lt;&gt;();
+            double correct = 0;
+              c.forEach(
+                  m -&gt; {
+                    List goldCluster = mentionToGold.get(m);
+                    if (goldCluster != null) {
+                      goldCounts.incrementCount(goldCluster);
+                    }
+                  });
+    

@@ -1,0 +1,13 @@
+    
+
+    	public static TagComponentList compileSelectorList(String selector) {
+      	    CssParsedSelectorList parsedSelectorList = CssSelectorParser.parseSelector(selector);
+    
+
+          	    List tagComponents = new ArrayList&lt;&gt;(parsedSelectorList.size());
+                  parsedSelectorList.forEach(cssParsedSelector -&gt; {
+                      tagComponents.add(compileIntoTagComponent(cssParsedSelector));
+                  });
+        	return new TagComponentList(tagComponents);
+    	}
+    

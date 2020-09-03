@@ -1,0 +1,19 @@
+public void prepareUpdateTab() {
+    browseUpdateDownloadPathButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent event) {
+            if(XJFileChooser.shared().displayChooseDirectory(getJavaContainer())) {
+                downloadPathField.setText(XJFileChooser.shared().getSelectedFilePath());
+                AWPrefs.setDownloadPath(downloadPathField.getText());
+            }
+        }
+    });
+
+    checkForUpdatesButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent event) {
+            HelpManager.checkUpdates(getJavaContainer(), false);
+        }
+    });
+
+    getPreferences().bindToPreferences(updateTypeCombo, AWPrefs.PREF_UPDATE_TYPE, AWPrefs.DEFAULT_UPDATE_TYPE);
+    getPreferences().bindToPreferences(downloadPathField, AWPrefs.PREF_DOWNLOAD_PATH, AWPrefs.DEFAULT_DOWNLOAD_PATH);
+}

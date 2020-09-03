@@ -1,0 +1,9 @@
+
+            if (left != null) {
+                  Token leftToken = left instanceof ParserRuleContext ? ((ParserRuleContext) left).getStop()
+                      : ((TerminalNodeImpl) left).getSymbol();
+                Token start = ctx.getStart();
+                  if (start.getLine() - leftToken.getLine() != 2) {
+                    printer.error(Messages.FUNCTION + Messages.NEWLINE_BEFORE, ListenerUtil.getTokenLocation(start));
+                }
+    

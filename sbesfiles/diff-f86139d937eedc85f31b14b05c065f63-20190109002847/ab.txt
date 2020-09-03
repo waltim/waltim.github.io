@@ -1,0 +1,9 @@
+
+        @Override
+    -    public Object getInstance() {
+    -        return instance;
+    +    public void printSetup(StringBuilder sb) {
+    +        sb.append(String.format("        //%s%n", instanceToString));
+    +        fields.forEach(f -&gt; f.print(sb));
+        }
+    

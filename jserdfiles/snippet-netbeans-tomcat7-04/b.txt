@@ -1,0 +1,13 @@
+    private Object executeMethod(final Method method,
+                                 final ApplicationContext context,
+                                 final Object[] params)
+            throws PrivilegedActionException,
+                   IllegalAccessException,
+                   InvocationTargetException {
+
+        if (SecurityUtil.isPackageProtectionEnabled()){
+           return AccessController.doPrivileged((PrivilegedExceptionAction<Object>) () -> method.invoke(context,  params));
+        } else {
+            return method.invoke(context, params);
+        }
+    }

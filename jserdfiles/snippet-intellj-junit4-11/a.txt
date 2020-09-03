@@ -1,0 +1,9 @@
+    private ThrowingRunnable evaluateWithException(final Exception exception) {
+        return new ThrowingRunnable() {
+            public void run() throws Throwable {
+                statement.nextException = exception;
+                statement.waitDuration = 0;
+                failOnTimeout.evaluate();
+            }
+        };
+    }

@@ -1,0 +1,24 @@
+
+            _subscriptions.add(//
+                  Observable.interval(INITIAL_DELAY, POLLING_INTERVAL, TimeUnit.MILLISECONDS)
+                          .map(new Func1&lt;Long, String&gt;() {
+                              @Override
+                              public String call(Long heartBeat) {
+                                  return _doNetworkCallAndGetStringResult(heartBeat);
+                              }
+                          }).take(pollCount)
+                          .doOnSubscribe(new Action0() {
+                              @Override
+                              public void call() {
+                                  _log(String.format("Start simple polling - %s", _counter));
+                              }
+                          })
+                          .subscribe(new Action1&lt;String&gt;() {
+                              @Override
+                              public void call(String taskName) {
+                                  _log(String.format(Locale.US, "Executing polled task [%s] now time : [xx:%02d]",
+                                        taskName, _getSecondHand()));
+                              }
+                        })
+            );
+    

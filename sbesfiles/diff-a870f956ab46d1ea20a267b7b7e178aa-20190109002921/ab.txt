@@ -1,0 +1,11 @@
+
+            original.setValueSet(valueSet);
+    -        Comparator&lt;TestdataSetBasedEntity&gt; entityComparator = new Comparator&lt;TestdataSetBasedEntity&gt;() {
+    -            @Override
+    -            public int compare(TestdataSetBasedEntity a, TestdataSetBasedEntity b) {
+    -                return b.getCode().compareTo(a.getCode()); // Reverse alphabetic
+    -            }
+    +        Comparator&lt;TestdataSetBasedEntity&gt; entityComparator = (a1, b1) -&gt; {
+    +            return b1.getCode().compareTo(a1.getCode()); // Reverse alphabetic
+            };
+    

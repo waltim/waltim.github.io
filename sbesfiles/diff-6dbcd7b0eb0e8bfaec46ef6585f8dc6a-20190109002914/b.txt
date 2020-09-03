@@ -1,0 +1,4 @@
+
+            final List&lt;Object&gt; valueList = Arrays.&lt;Object&gt;asList(values);
+              when(valueSelector.iterator(any())).thenAnswer(invocation -&gt; valueList.iterator());
+    

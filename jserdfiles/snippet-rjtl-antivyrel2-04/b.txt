@@ -1,0 +1,3 @@
+public boolean hasChanged() {
+    return confReports.values().stream().anyMatch(report -> report.hasChanged());
+}

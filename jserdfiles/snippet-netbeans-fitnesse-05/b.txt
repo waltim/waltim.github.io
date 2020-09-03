@@ -1,0 +1,6 @@
+  public ContextConfigurator updatedWith(Properties newProperties) {
+      newProperties.stringPropertyNames().forEach((key) -> {
+          withParameter(key, newProperties.getProperty(key));
+      });
+    return this;
+  }

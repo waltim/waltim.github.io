@@ -1,0 +1,9 @@
+    	public static SeleniumQueryObject focus(SeleniumQueryObject caller) {
+    		List elements = caller.get();
+    		WebDriver driver = caller.getWebDriver();
+      		elements.forEach(webElement -&gt; {
+    			focusElement(driver, webElement);
+      		});
+    		return caller;
+    	}
+    

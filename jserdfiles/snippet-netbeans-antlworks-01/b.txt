@@ -1,0 +1,7 @@
+    private void rememberAllOpenedDocuments() {
+        final List<String> docPath = new ArrayList<String>();
+        XJApplication.shared().getWindows().stream().map((window) -> window.getDocument()).filter((document) -> (XJApplication.handlesDocument(document))).forEachOrdered((document) -> {
+            docPath.add(document.getDocumentPath());
+        });
+        AWPrefs.setAllOpenedDocuments(docPath);
+    }

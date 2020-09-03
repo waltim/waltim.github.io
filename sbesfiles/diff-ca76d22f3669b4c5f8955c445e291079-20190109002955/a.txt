@@ -1,0 +1,16 @@
+
+            Map&lt;String, Object&gt; output = new HashMap&lt;&gt;();
+            output.put(Messages.SUMMARY_KEY,
+                Formatter.formatSummary(numFiles, numSkipped, numErrors, numWarnings).replace(NEWLINE_PATTERN, ""));
+              Collections.sort(FILES, Collections.reverseOrder(new Comparator&lt;Map&lt;String, Object&gt;&gt;() {
+                  @Override
+                  public int compare(Map&lt;String, Object&gt; o1, Map&lt;String, Object&gt; o2) {
+                      return Integer.compare(
+                          ((List) o1.get(Messages.VIOLATIONS_KEY)).size(),
+                          ((List) o2.get(Messages.VIOLATIONS_KEY)).size()
+                      );
+                  }
+              }));
+            output.put(Messages.FILES_KEY, FILES);
+            output.put(Messages.VERSION_LONG_OPT, new ConfigProperties().getVersion());
+    

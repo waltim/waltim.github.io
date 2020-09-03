@@ -1,0 +1,17 @@
+
+         */
+        private void queryProvinces() {
+            collapsingToolbarLayout.setTitle("Ã©ÂÂÃ¦ÂÂ©Ã§ÂÂÃ¤Â»Â½");
+              Observable.defer(() -&gt; {
+                  provincesList = mWeatherDB.loadProvinces(mDBManager.getDatabase());
+                  dataList.clear();
+                  return Observable.from(provincesList);
+              }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
+                  province -&gt; dataList.add(province.ProName), throwable -&gt; PLog.e(TAG, throwable.toString()), () -&gt; {
+                    currentLevel = LEVEL_PROVINCE;
+                    mAdapter.notifyDataSetChanged();
+                    mProgressBar.setVisibility(View.GONE);
+                }
+              );
+        }
+    

@@ -1,0 +1,16 @@
+    
+
+    	public static String text(List webElements) {
+    		StringBuilder sb = new StringBuilder();
+      		webElements.forEach(element -&gt; {
+    			sb.append(element.getText()).append(" ");
+      		});
+    		if (sb.length() &gt; 0) {
+    			// remove the last added " "
+    			sb.deleteCharAt(sb.length()-1);
+    		}
+    		return sb.toString();
+    	}
+      
+
+    

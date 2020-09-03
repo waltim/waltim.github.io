@@ -1,0 +1,12 @@
+        public void ConsoleStatus() {
+            box = Box.createHorizontalBox();
+
+            label = new XJURLLabel(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    selectTab(consoleTab.getTabComponent());
+                    clearMessage();
+                }
+            });
+
+            clearMessage();
+        }

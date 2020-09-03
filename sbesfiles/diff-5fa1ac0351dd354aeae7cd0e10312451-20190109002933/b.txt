@@ -1,0 +1,12 @@
+
+        @NonNull
+        private Observable&lt;RxBleScanResult&gt; createScanOperation(@Nullable UUID[] filterServiceUUIDs) {
+              return Observable.defer(() -&gt; Observable.from(discoverableDevices.values())
+                                                      .filter(rxBleDevice -&gt; filterDevice(rxBleDevice, filterServiceUUIDs))
+                    .map(rxBleDevice -&gt; {
+                        RxBleDeviceMock rxBleDeviceMock = (RxBleDeviceMock) rxBleDevice;
+                        return convertToPublicScanResult(rxBleDeviceMock, rxBleDeviceMock.getRssi(), rxBleDeviceMock.getScanRecord());
+                    })
+                    .share());
+        }
+    

@@ -1,0 +1,10 @@
+
+        private void initFab() {
+    -        mFloatingButton.setOnClickListener(v -&gt; mPresenter.addNewApp());
+    +        mFloatingButton.setOnClickListener(v -&gt; {
+    +            CircularAnim.fullActivity(this, mFloatingButton)
+    +                    .colorOrImageRes(R.color.colorPrimaryRavel)
+    +                    .go(() -&gt; ListAppActivity.gotoListApp(this));
+    +        });
+        }
+    

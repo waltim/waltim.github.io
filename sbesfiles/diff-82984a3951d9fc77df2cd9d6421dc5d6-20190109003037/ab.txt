@@ -1,0 +1,8 @@
+
+    	@Override
+    -	public boolean supportsParameter(MethodParameter parameter) {
+    -		return parameter.hasParameterAnnotation(Value.class);
+    +	public boolean supportsParameter(MethodParameter param) {
+    +		return checkAnnotatedParamNoReactiveWrapper(param, Value.class, (annot, type) -&gt; true);
+    	}
+    

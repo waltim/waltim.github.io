@@ -1,0 +1,22 @@
+
+        @Override
+        public String getBody() {
+    +
+            StringBuilder buffer = new StringBuilder();
+    -        String delim = "";
+    -        for (int i = 0; i &lt; this.paramTypes.size(); i++) {
+    -            String paramType = this.paramTypes.get(i);
+    -            if (paramType != null &amp;&amp; !paramType.isEmpty()) {
+    -                buffer.append(delim).append(paramType).append(" p").append(i + 1);
+    -                delim = ", ";
+    -            }
+    -        }
+    -        return String.format(this.template, this.returnType, this.name, buffer.toString()).trim();
+    +        this.params.forEach((paramName, paramType) -&gt; {
+    +            buffer.append(buffer.length() == 0 ? "" : ", ");
+    +            buffer.append(paramType).append(" ").append(paramName);
+    +        });
+    +
+    +        return String.format(DEFAULT_TEMPLATE, this.formatModifiers(modifiers), this.returnType, this.name, buffer.toString()).trim();
+        }
+    

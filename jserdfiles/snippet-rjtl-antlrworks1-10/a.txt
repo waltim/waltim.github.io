@@ -1,0 +1,7 @@
+public void updateInterfaceLater() {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            updateInterface();
+        }
+    });
+}

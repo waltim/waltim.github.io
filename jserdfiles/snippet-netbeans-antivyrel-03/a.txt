@@ -1,0 +1,7 @@
+  public static long totalSize(Collection<File> files) {
+    long total = 0;
+    for (File file : files) {
+      total += file.length();
+    }
+    return total;
+  }

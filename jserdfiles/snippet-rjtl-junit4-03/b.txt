@@ -1,0 +1,4 @@
+@Override
+public void run(final RunNotifier notifier) {
+    new ClassRoadie(notifier, testClass, getDescription(), ()-> { runMethods(notifier);}).runProtected();
+}

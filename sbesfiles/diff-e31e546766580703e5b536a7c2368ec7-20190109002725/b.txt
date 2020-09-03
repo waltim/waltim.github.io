@@ -1,0 +1,6 @@
+
+        @Override
+          public void replace(K k, V v, Handler&lt;AsyncResult&lt;V&gt;&gt; resultHandler) {
+            vertx.executeBlocking(fut -&gt; fut.complete(map.replace(k, v)), resultHandler);
+        }
+    

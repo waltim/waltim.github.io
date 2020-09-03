@@ -1,0 +1,5 @@
+  public static long totalSize(Collection<File> files) {
+    long total = 0;
+    total = files.stream().map((file) -> file.length()).reduce(total, (accumulator, _item) -> accumulator + _item);
+    return total;
+  }

@@ -1,0 +1,12 @@
+public void componentDidAwake() {
+    updateInformation();
+    updateCursorInfo();
+    // Request focus in the text pane. A little bit later because
+    // in desktop mode, the focus is not taken into account if
+    // requested immediately.
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            getTextPane().requestFocusInWindow();
+        }
+    });
+}

@@ -1,0 +1,6 @@
+    public synchronized void addError(Test test, Throwable e) {
+        fErrors.add(new TestFailure(test, e));
+        for (TestListener each : cloneListeners()) {
+            each.addError(test, e);
+        }
+    }

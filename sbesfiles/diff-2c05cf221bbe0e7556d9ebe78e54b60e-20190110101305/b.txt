@@ -1,0 +1,7 @@
+      public static  Iterable&gt; zip(
+          final Iterable iter1, final Iterable iter2) {
+    
+
+          return ()-&gt; { return zip(iter1.iterator(), iter2.iterator());};
+      }
+    

@@ -1,0 +1,17 @@
+        protected String getItemDescriptionsAtPoint(Point point) {
+            StringBuilder sb = new StringBuilder();
+            ATEAnalysisManager manager = getAnalysisManager();
+            if(manager != null) {
+                int[] types = manager.getAvailableTypes();
+                for(int type=0; type<types.length; type++) {
+                    List<ATEAnalysisItem> items = manager.getItemsForType(type);
+                    items.stream().filter((ai) -> (composeIndicatorRectangle(ai.line, 2).contains(point))).map((ai) -> {
+                        sb.append(ai.description);
+                        return ai;
+                    }).forEachOrdered((_item) -> {
+                        sb.append("\n");
+                    });
+                }
+            }
+            return sb.toString();
+        }

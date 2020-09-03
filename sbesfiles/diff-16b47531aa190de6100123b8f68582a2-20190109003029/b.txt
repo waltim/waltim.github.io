@@ -1,0 +1,6 @@
+
+        @Override
+        public Optional&lt;DataView&gt; getView(DataQuery path) {
+              return get(path).filter(obj -&gt; obj instanceof DataView).map(obj -&gt; (DataView) obj);
+        }
+    

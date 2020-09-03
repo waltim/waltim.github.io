@@ -1,0 +1,35 @@
+
+         */
+        private void queryProvinces() {
+            collapsingToolbarLayout.setTitle("Ã©ÂÂÃ¦ÂÂ©Ã§ÂÂÃ¤Â»Â½");
+              Observer&lt;Province&gt; observer = new Observer&lt;Province&gt;() {
+                  @Override
+                  public void onCompleted() {
+                    currentLevel = LEVEL_PROVINCE;
+                    mAdapter.notifyDataSetChanged();
+                    mProgressBar.setVisibility(View.GONE);
+                      //PLog.i(TAG,"Ã§ÂÂÃ¤Â»Â½");
+                  }
+      
+                  @Override
+                  public void onError(Throwable e) {
+      
+                }
+                  @Override
+                  public void onNext(Province province) {
+                      //Ã¥ÂÂ¨Ã¨Â¿ÂÃ©ÂÂÃ¥ÂÂ RV Ã§ÂÂÃ¥ÂÂ¨Ã§ÂÂ»Ã¦ÂÂÃ¦ÂÂ Ã¤Â½Â¿Ã§ÂÂ¨ Item Ã§ÂÂÃ¦ÂÂ´Ã¦ÂÂ°
+                      dataList.add(province.ProName);
+                      //PLog.i(TAG,province.ProSort+"");
+                      //mAdapter.notifyItemInserted(province.ProSort-1);
+      
+                  }
+              };
+      
+              Observable.defer(() -&gt; {
+                  provincesList = mWeatherDB.loadProvinces(mDBManager.getDatabase());
+                  dataList.clear();
+                  mAdapter.notifyDataSetChanged();
+                  return Observable.from(provincesList);
+              }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(observer);
+        }
+    

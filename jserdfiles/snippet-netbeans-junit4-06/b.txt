@@ -1,0 +1,5 @@
+    public int countTestCases() {
+        int count = 0;
+        count = fTests.stream().map((each) -> each.countTestCases()).reduce(count, Integer::sum);
+        return count;
+    }

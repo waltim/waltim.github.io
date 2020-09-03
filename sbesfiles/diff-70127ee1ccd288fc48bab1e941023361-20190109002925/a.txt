@@ -1,0 +1,9 @@
+
+        @NonNull
+        private Observable&lt;byte[]&gt; setupCharacteristicNotification(BluetoothGattDescriptor bluetoothGattDescriptor, boolean enabled) {
+              final BluetoothGattCharacteristic bluetoothGattCharacteristic = bluetoothGattDescriptor.getCharacteristic();
+              return bluetoothGatt.setCharacteristicNotification(bluetoothGattCharacteristic, enabled)
+                      ? writeDescriptor(bluetoothGattDescriptor, enabled ? ENABLE_NOTIFICATION_VALUE : DISABLE_NOTIFICATION_VALUE)
+                      : Observable.error(new BleCannotSetCharacteristicNotificationException(bluetoothGattCharacteristic));
+        }
+    

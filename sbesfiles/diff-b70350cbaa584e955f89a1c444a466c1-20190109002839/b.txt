@@ -1,0 +1,13 @@
+
+            _subscriptions.add(//
+                  Observable.interval(INITIAL_DELAY, POLLING_INTERVAL, TimeUnit.MILLISECONDS)
+                          .map(this::_doNetworkCallAndGetStringResult)//
+                          .take(pollCount)
+                          .doOnSubscribe(() -&gt;
+                                _log(String.format("Start simple polling - %s", _counter)))
+                          .subscribe(taskName -&gt; {
+                              _log(String.format(Locale.US, "Executing polled task [%s] now time : [xx:%02d]",
+                                    taskName, _getSecondHand()));
+                        })
+            );
+    

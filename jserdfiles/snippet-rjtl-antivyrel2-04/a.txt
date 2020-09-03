@@ -1,0 +1,8 @@
+public boolean hasChanged() {
+    for (ConfigurationResolveReport report : confReports.values()) {
+        if (report.hasChanged()) {
+            return true;
+        }
+    }
+    return false;
+}
