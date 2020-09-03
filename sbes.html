@@ -15,30 +15,11 @@
 
 <body>
     <div id="header-content" class="center-page">
-        <h2 style="text-align: center;">Title of researh</h2>
+        <h2 style="text-align: center;">Does the Introduction of Lambda Expressions Improve theComprehension of Java Programs?</h2>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. In arcu cursus euismod quis viverra nibh cras pulvinar. Mauris ultrices eros in cursus turpis
-            massa. Vulputate enim nulla aliquet porttitor lacus luctus. Non tellus orci ac auctor augue mauris. Arcu
-            dictum varius duis at. Id ornare arcu odio ut sem nulla pharetra diam. Ut placerat orci nulla pellentesque
-            dignissim enim sit amet venenatis. Quisque non tellus orci ac auctor augue mauris augue. Cum sociis natoque
-            penatibus et magnis dis parturient. Interdum velit laoreet id donec ultrices. Scelerisque varius morbi enim
-            nunc faucibus a. Nulla at volutpat diam ut venenatis tellus in. Ipsum nunc aliquet bibendum enim facilisis
-            gravida. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Arcu bibendum at varius vel
-            pharetra. Suspendisse potenti nullam ac tortor. At consectetur lorem donec massa sapien faucibus et molestie
-            ac. A scelerisque purus semper eget duis. Lacus vestibulum sed arcu non odio euismod.</p>
-
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. In arcu cursus euismod quis viverra nibh cras pulvinar. Mauris ultrices eros in cursus turpis
-            massa. Vulputate enim nulla aliquet porttitor lacus luctus. Non tellus orci ac auctor augue mauris. Arcu
-            dictum varius duis at. Id ornare arcu odio ut sem nulla pharetra diam. Ut placerat orci nulla pellentesque
-            dignissim enim sit amet venenatis. Quisque non tellus orci ac auctor augue mauris augue. Cum sociis natoque
-            penatibus et magnis dis parturient. Interdum velit laoreet id donec ultrices. Scelerisque varius morbi enim
-            nunc faucibus a. Nulla at volutpat diam ut venenatis tellus in. Ipsum nunc aliquet bibendum enim facilisis
-            gravida. In metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Arcu bibendum at varius vel
-            pharetra. Suspendisse potenti nullam ac tortor. At consectetur lorem donec massa sapien faucibus et molestie
-            ac. A scelerisque purus semper eget duis. Lacus vestibulum sed arcu non odio euismod.</p>
+        <p style="text-align: justify;">
+            Background: The Java programming language version eighth in-troduced a number of features that encourage the functional styleof programming, including the support for lambda expressions andthe Stream API. Currently, there is a common wisdom that refac-toring a legacy code to introduce lambda expressions, besides otherpotential benefits, simplifies the code and improves program com-prehension.Aims: The purpose of this paper is to investigate thisbelief, conducting an in depth study to evaluate the effect of intro-ducing lambda expressions on program comprehension.Method:We conduct this research using a mixed-method study. First, wequantitatively analyze 66 pairs of real code snippets, where eachpair corresponds to the body of a method before and after the intro-duction of lambda expressions. We computed two metrics relatedto source code complexity (number of lines of code and cyclomaticcomplexity) and two metrics that estimate the readability of thesource code. Second, we conduct a survey with practitioners tocollect their perceptions about the benefits on program comprehen-sion, with the introduction of lambda expressions. The practitionersevaluate a number between three and six pairs of code snippets,to answer questions about possible improvements.Results: Wefound contradictory results in our research. Based on the quantita-tive assessment, we could not find evidences that the introductionof lambda expressions improves software readability—one of thecomponents of program comprehension. Differently, our findings ofthe qualitative assessment suggest that the introduction of lambdaexpression improves program comprehension.Implications: Weargue in this paper that one can improve program comprehensionwhen she applies particular transformations to introduce lambdaexpressions (e.g., replacing anonymous inner classes by lambdaexpressions). In addition, the opinion of the participants shine theopportunities in which a transformation for introducing lambdamight be advantageous. This might support the implementation ofeffective tools for automatic program transformations. Finally, ourresults suggest that state-of-the-art models for estimating programreadability are not helpful to capture the benefits of a programtransformation to introduce lambda expressions.
+        </p>
     </div>
     <div id="table-transformations" class="center-page">
         <table id="snippets" class="table table-striped table-bordered" style="width:100%">
@@ -92,7 +73,7 @@
                 <div class="modal-body">
                     <h5>Code before:</h5>
                     <div id="before" class="col-md-12">
-    
+
                     </div>
                     <h5>Code after:</h5>
                     <div id="after" class="col-md-12">
@@ -131,8 +112,8 @@
                 "<td>" + data[key].Loc_After + "</td>" +
                 "<td>" + data[key].Complex_Before + "</td>" +
                 "<td>" + data[key].Complex_After + "</td>" +
-                "<td>" + data[key].Posnet_Before + "</td>" +
-                "<td>" + data[key].Posnet_After + "</td>" +
+                "<td>" + convertPosnett(data[key].Posnet_Before) + "</td>" +
+                "<td>" + convertPosnett(data[key].Posnet_After) + "</td>" +
                 "<td>" + data[key].RayBuse_Before + "</td>" +
                 "<td>" + data[key].RayBuse_After + "</td>" +
                 "<td>" + "<button type='button' id='" + data[key].Transformation + "' data-val='" + data[key].diff_id + "' class='snippet btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'> View snippets </button>" + "</td>" +
@@ -151,7 +132,7 @@
         var button = $(event.relatedTarget);
         var id = button[0].id;
         var path = button[0].attributes[2].nodeValue;
-        $("#number-snippet").text("Transformation "+id);
+        $("#number-snippet").text("Transformation " + id);
         $.get('sbesfiles/' + path + '/a.txt', function (data) {
             $("#before").html("");
             $("#before").append($("<xmp id='code1' class='brush: java'>" + data + "</xmp>"));
@@ -172,6 +153,15 @@
             });
         });
     });
+</script>
+
+<script type="text/javascript">
+    function convertPosnett(value) {
+        var val = parseFloat(value.replace(",", "."));
+        var retval = 1 - val;
+        var num = retval.toFixed(3).toString();
+        return num.replace(".", ",");
+    }
 </script>
 
 </html>
