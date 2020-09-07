@@ -15,38 +15,31 @@
 
 <body>
     <div id="header-content" class="center-page">
-        <h2 style="text-align: center;">Does the Introduction of Lambda Expressions Improve theComprehension of Java Programs?</h2>
+        <h2 style="text-align: center;">Understanding the Impact of Introducing Lambda Expressions
+            in Java Programs</h2>
 
         <p style="text-align: justify;">
-            Background: The Java programming language version eighth introduced a number of features that encourage the functional style
-of programming, including the support for lambda expressions and
-the Stream API. Currently, there is a common wisdom that refactoring a legacy code to introduce lambda expressions, besides other
-potential benefits, simplifies the code and improves program comprehension. Aims: The purpose of this paper is to investigate this
-belief, conducting an in depth study to evaluate the effect of introducing lambda expressions on program comprehension. Method:
-We conduct this research using a mixed-method study. First, we
-quantitatively analyze 66 pairs of real code snippets, where each
-pair corresponds to the body of a method before and after the introduction of lambda expressions. We computed two metrics related
-to source code complexity (number of lines of code and cyclomatic
-complexity) and two metrics that estimate the readability of the
-source code. Second, we conduct a survey with practitioners to
-collect their perceptions about the benefits on program comprehension, with the introduction of lambda expressions. The practitioners
-evaluate a number between three and six pairs of code snippets,
-to answer questions about possible improvements. Results: We
-found contradictory results in our research. Based on the quantitative assessment, we could not find evidences that the introduction
-of lambda expressions improves software readability—one of the
-components of program comprehension. Differently, our findings of
-the qualitative assessment suggest that the introduction of lambda
-expression improves program comprehension. Implications: We
-argue in this paper that one can improve program comprehension
-when she applies particular transformations to introduce lambda
-expressions (e.g., replacing anonymous inner classes by lambda
-expressions). In addition, the opinion of the participants shine the
-opportunities in which a transformation for introducing lambda
-might be advantageous. This might support the implementation of
-effective tools for automatic program transformations. Finally, our
-results suggest that state-of-the-art models for estimating program
-readability are not helpful to capture the benefits of a program
-transformation to introduce lambda expressions.
+            Background: The Java programming language version eight introduced several features that encourage the func-
+tional style of programming, including the support for lambda expressions and the Stream API. Currently, there is
+a common wisdom that refactoring legacy code to introduce lambda expressions, besides other potential benefits,
+simplifies the code and improves program comprehension. Aims: The purpose of this work is to investigate this
+belief, conducting an in-depth study to evaluate the effect of introducing lambda expressions on program compre-
+hension. Method: We conducted this research using a mixed-method approach. For the quantitative method, we
+quantitatively analyzed 158 pairs of code snippets extracted directly either from GitHub or from recommendations
+from three tools (RJTL, NetBeans, and IntelliJ). We also surveyed practitioners to collect their perceptions about
+the benefits on program comprehension when introducing lambda expressions. We asked practitioners to evalu-
+ate and rate sets of pairs of code snippets. Results: We found contradictory results in our research. Based on the
+quantitative assessment, we could not find evidence that the introduction of lambda expressions improves software
+readability—one of the components of program comprehension. Our results suggest that the transformations rec-
+ommended by the aforementioned tools decrease program comprehension when assessed by two state-of-the-art
+models to estimate readability. Differently, our findings of the qualitative assessment suggest that the introduc-
+tion of lambda expression improves program comprehension in three scenarios: when we convert anonymous inner
+classes to a lambda expression, structural loops with inner conditional to an anyMatch operator, and structural loops
+to filter operator combined with a collect method. Implications: We argue in this paper that one can improve
+program comprehension when he/she applies particular transformations to introduce lambda expressions (e.g., re-
+placing anonymous inner classes with lambda expressions). Also, the opinion of the participants highlights which
+kind of transformation for introducing lambda might be advantageous. This might support the implementation of
+effective tools for automatic program transformations.
         </p>
     </div>
     <div id="table-transformations" class="center-page">
@@ -55,6 +48,7 @@ transformation to introduce lambda expressions.
                 <tr>
                     <th>Transformation ID</th>
                     <th>Type</th>
+                    <th>Tool</th>
                     <th>Loc Before</th>
                     <th>Loc After</th>
                     <th>ACCM Before</th>
@@ -72,6 +66,7 @@ transformation to introduce lambda expressions.
                 <tr>
                     <th>Transformation ID</th>
                     <th>Type</th>
+                    <th>Tool</th>
                     <th>Loc Before</th>
                     <th>Loc After</th>
                     <th>ACCM Before</th>
@@ -136,12 +131,13 @@ transformation to introduce lambda expressions.
         $.each(data, function (key, val) {
             $("#snippets").find('tbody').append($("<tr>" + "<td>" + data[key].Transformation + "</td>" +
                 "<td>" + data[key]._Type + "</td>" +
+                "<td>" + data[key].Tool + "</td>" +
                 "<td>" + data[key].Loc_Before + "</td>" +
                 "<td>" + data[key].Loc_After + "</td>" +
                 "<td>" + data[key].Complex_Before + "</td>" +
                 "<td>" + data[key].Complex_After + "</td>" +
-                "<td>" + convertPosnett(data[key].Posnet_Before) + "</td>" +
-                "<td>" + convertPosnett(data[key].Posnet_After) + "</td>" +
+                "<td>" + data[key].Posnet_Before + "</td>" +
+                "<td>" + data[key].Posnet_After + "</td>" +
                 "<td>" + data[key].RayBuse_Before + "</td>" +
                 "<td>" + data[key].RayBuse_After + "</td>" +
                 "<td>" + "<button type='button' id='" + data[key].Transformation + "' data-val='" + data[key].diff_id + "' class='snippet btn btn-info btn-lg' data-toggle='modal' data-target='#myModal'> View snippets </button>" + "</td>" +
@@ -161,11 +157,11 @@ transformation to introduce lambda expressions.
         var id = button[0].id;
         var path = button[0].attributes[2].nodeValue;
         $("#number-snippet").text("Transformation " + id);
-        $.get('sbesfiles/' + path + '/a.txt', function (data) {
+        $.get('jserdfiles/' + path + '/a.txt', function (data) {
             $("#before").html("");
             $("#before").append($("<xmp id='code1' class='brush: java'>" + data + "</xmp>"));
         });
-        $.get('sbesfiles/' + path + '/b.txt', function (data) {
+        $.get('jserdfiles/' + path + '/b.txt', function (data) {
             $("#after").html("");
             $("#after").append($("<xmp id='code2' class='brush: java'>" + data + "</xmp>"));
         }).done(function () {
@@ -181,15 +177,6 @@ transformation to introduce lambda expressions.
             });
         });
     });
-</script>
-
-<script type="text/javascript">
-    function convertPosnett(value) {
-        var val = parseFloat(value.replace(",", "."));
-        var retval = 1 - val;
-        var num = retval.toFixed(3).toString();
-        return num.replace(".", ",");
-    }
 </script>
 
 </html>
