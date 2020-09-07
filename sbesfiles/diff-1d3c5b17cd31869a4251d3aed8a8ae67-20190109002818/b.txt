@@ -1,5 +1,3 @@
->
-      
         @Override
           public CTLSchemaMetaInfoDto promoteScopeToTenant(String applicationId, String fqn)
                 throws KaaAdminServiceException {
@@ -39,6 +37,5 @@
                 return controlService.updateCTLSchemaMetaInfoScope(ctlSchemaMetaInfo);
             } catch (Exception cause) {
                 throw Utils.handleException(cause);
-    @@ -3467,8 +3600,8 @@ public CtlSchemaFormDto getCTLSchemaFormByMetaInfoIdAndVer(String metaInfoId, in
         }
     

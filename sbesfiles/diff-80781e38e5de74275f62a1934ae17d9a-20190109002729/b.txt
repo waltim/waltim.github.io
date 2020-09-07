@@ -1,4 +1,4 @@
->
+
           /** ensure a cluster is formed with all published nodes, but do so by using the client of the specified node */
         private void validateClusterFormed(String viaNode) {
               Set&lt;DiscoveryNode&gt; expectedNodes = new HashSet&lt;&gt;();

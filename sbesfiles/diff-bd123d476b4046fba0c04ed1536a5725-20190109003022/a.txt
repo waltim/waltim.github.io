@@ -1,4 +1,4 @@
->
+
             @Override
             protected Iterable&lt;String&gt; getChoices(CommandSource source) {
                   return Iterables.transform(this.game.getRegistry().getAllOf(this.catalogType), new Function&lt;T, String&gt;() {

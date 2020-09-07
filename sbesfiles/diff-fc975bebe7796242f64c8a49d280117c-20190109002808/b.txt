@@ -1,4 +1,4 @@
--code blob-code-context selected-line">
+
             public List&lt;Integer&gt; readFrom(final Class&lt;List&lt;Integer&gt;&gt; type, final Type genericType, final Annotation[] annotations,
                                           final MediaType mediaType, final MultivaluedMap&lt;String, String&gt; httpHeaders,
                                           final InputStream entityStream) throws IOException, WebApplicationException {

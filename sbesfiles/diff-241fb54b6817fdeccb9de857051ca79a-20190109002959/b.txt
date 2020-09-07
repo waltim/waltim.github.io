@@ -1,5 +1,4 @@
 
-         */
         private void walkParseTree(List&lt;SwiftBaseListener&gt; listeners, TopLevelContext tree) {
             ParseTreeWalker walker = new ParseTreeWalker();
               listeners.forEach(listener -&gt; walker.walk(listener, tree));

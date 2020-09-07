@@ -9,7 +9,6 @@
     
 
               public boolean hasNext() {
-    @@ -56,9 +54,7 @@ public V next() {
               public void remove() {
                 inner.remove();
               }

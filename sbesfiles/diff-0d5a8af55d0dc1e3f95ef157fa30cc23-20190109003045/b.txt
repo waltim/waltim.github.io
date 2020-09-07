@@ -11,6 +11,6 @@
     			}
     		});
     		assertTrue(this.releaseStrategy.latch2.await(10, TimeUnit.SECONDS));
-    @@ -124,17 +119,12 @@ public void run() {
+
     	}
     

@@ -1,5 +1,4 @@
--code blob-code-context selected-line">
-         */
+
         static List&lt;ResourceMethod&gt; transform(final Resource parent, final List&lt;Data&gt; list) {
               return list.stream()
                          .map(data1 -&gt; (data1 == null) ? null : new ResourceMethod(parent, data1))
