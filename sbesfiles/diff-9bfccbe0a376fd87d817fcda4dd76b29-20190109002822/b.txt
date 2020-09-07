@@ -1,6 +1,4 @@
-
-         */
-        @Override
+       @Override
           public SyncContext syncProfileServerHash(SyncContext context) {
             EndpointProfileDto profile = context.getEndpointProfile();
             if (!operationServerHash.equals(profile.getServerHash())) {

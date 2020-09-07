@@ -1,5 +1,4 @@
 
-         */
         private void queryProvinces() {
             collapsingToolbarLayout.setTitle("Ã©ÂÂÃ¦ÂÂ©Ã§ÂÂÃ¤Â»Â½");
               Observer&lt;Province&gt; observer = new Observer&lt;Province&gt;() {

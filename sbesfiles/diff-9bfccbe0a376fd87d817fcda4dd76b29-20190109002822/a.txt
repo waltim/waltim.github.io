@@ -1,5 +1,3 @@
-
-         */
         @Override
           public EndpointProfileDto updateProfile(SyncContext context) {
             EndpointProfileDto profile = context.getEndpointProfile();

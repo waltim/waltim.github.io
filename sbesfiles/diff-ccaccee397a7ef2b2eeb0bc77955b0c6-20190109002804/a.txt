@@ -1,5 +1,4 @@
--code blob-code-context selected-line">
-         */
+
         static List&lt;ResourceMethod&gt; transform(final Resource parent, final List&lt;Data&gt; list) {
               return Lists.transform(list, new Function&lt;Data, ResourceMethod&gt;() {
                   @Override

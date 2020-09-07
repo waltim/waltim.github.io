@@ -1,4 +1,4 @@
->
+
             @Override
             protected Iterable&lt;String&gt; getChoices(CommandSource source) {
                   return this.game.getRegistry().getAllOf(this.catalogType).stream()
