@@ -27,6 +27,6 @@ latest_posts:
   limit: 3
 ---
 
-I am a Software Engineer and Researcher holding a Ph.D. in Computer Science from the University of Brasília (UnB)[cite: 2]. My academic and professional work focuses on Software Engineering, with a strong emphasis on source code rejuvenation, software evolution, code comprehension, system modernization, and program transformations[cite: 2].
+I am a Software Engineer and Researcher holding a Ph.D. in Computer Science from the University of Brasília (UnB). My academic and professional work focuses on Software Engineering, with a strong emphasis on source code rejuvenation, software evolution, code comprehension, system modernization, and program transformations.
 
-Over the years, I have participated in several Research, Development, and Innovation (RD&I) initiatives, including projects tied to the Brazilian Army, the Department of Electrical Engineering at UnB, and collaborative frameworks involving FAPDF, UnB, and the National Council of Justice (CNJ)[cite: 2]. My technical expertise spans Java, PHP, backend architecture, ETL, Business Intelligence, static code analysis, and automated testing[cite: 2].
+Over the years, I have participated in several Research, Development, and Innovation (RD&I) initiatives, including projects tied to the Brazilian Army, the Department of Electrical Engineering at UnB, and collaborative frameworks involving FAPDF, UnB, and the National Council of Justice (CNJ). My technical expertise spans Java, PHP, backend architecture, ETL, Business Intelligence, static code analysis, and automated testing.

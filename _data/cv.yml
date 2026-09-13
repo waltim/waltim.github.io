@@ -1,189 +1,161 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  name: Walter Lucas Monteiro de Mendonça
+  label: Software Engineer & Researcher (Ph.D. in Computer Science)
+  email: waltimlmm@gmail.com
+  location: Brasília, Brazil
+  image: "3x4AtualWalter.png"
+  summary: Software engineer and researcher holding a Ph.D. in Computer Science from the University of Brasília (UnB), specializing in source code rejuvenation, software evolution, code comprehension, and system modernization.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: waltim
     - network: LinkedIn
       username: example
 
   address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+    street: SQN 405 Block O Apt 104
+    city: Brasília
+    region: Federal District
+    postalCode: "70846-150"
+    countryCode: BR
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
+      - institution: University of Brasília (UnB)
+        location: Brasília, Brazil
+        url: https://www.unb.br/
+        area: Computer Science
+        studyType: Ph.D.
+        start_date: "2019"
+        end_date: "2026"
         score: ""
-        courses: "Theory of Relativity"
+        courses: "Source Code Rejuvenation, Software Evolution, Software Maintenance"
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Ph.D. Thesis: A Socio-Technical Grounded Theory about Source Code Rejuvenation."
+          - "Advisor: Rodrigo Bonifácio de Almeida."
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: University of Brasília (UnB)
+        location: Brasília, Brazil
+        url: https://www.unb.br/
+        area: Computer Science
+        studyType: Master.Sc.
+        start_date: "2017"
+        end_date: "2019"
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Master Thesis: Analysis of the impact on the understanding of Java programs with the adoption of lambda expressions[cite: 3]."
+          - "Advisor: Rodrigo Bonifácio de Almeida."
+
+      - institution: University Center of Patos de Minas (UNIPAM)
+        location: Patos de Minas, Brazil
+        url: https://www.unipam.edu.br/
+        area: Information System
+        studyType: Bachelor's Degree
+        start_date: "2011"
+        end_date: "2015"
+        highlights:
+          - "Thesis: UNIEXPO: platform for dissemination of extension projects."
+          - "Advisor: Jean Lucas de Souza."
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
-        highlights:
-          - Relativity
-          - Description 2.
+      - company: FOTON INFORMATICA S.A
+        position: Java Developer Analyst
+        location: Brazil
+        start_date: "2024"
+        end_date: "Present"
+        summary: Conduction and refinement of requirements, legacy system modernization, troubleshooting, refactoring, and static analysis using SonarLint and Fortify, alongside automated testing with JUnit and Mockito.
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
-        highlights:
-          - Description 1.
-          - Description 2.
+      - company: University of Brasília (UnB) / CNJ
+        position: Developer and Researcher
+        location: Brasília, Brazil
+        start_date: "2023"
+        end_date: "2024"
+        summary: Analyzed the impact of the ESV mobile application on the social reintegration of prison system graduates, coordinating backend, frontend, and architecture validation.
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
+      - company: INESC TEC International Visiting Researcher Programme
+        position: Researcher
+        location: Portugal
+        start_date: "2022"
+        end_date: "2023"
+        summary: Studied development practices of KDE contributors concerning modern C++ feature adoption across GitHub repository histories.
 
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
+      - company: Fundação de Empreendimentos Científicos e Tecnológicos (FINATEC)
+        position: Developer and Researcher
+        location: Brasília, Brazil
+        start_date: "2020"
+        end_date: "2022"
+        summary: Explored privacy and user-centric requirement elicitation techniques in social inclusion contexts utilizing ETL solutions.
 
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
+      - company: Department of Electrical Engineering - UNB
+        position: Developer and Researcher
+        location: Brasília, Brazil
+        start_date: "2018"
+        end_date: "2020"
+        summary: Applied research in strategic planning, corporate risk management, and corporate information management within the Ministry of Planning[cite: 2, 3].
 
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+      - company: Fundação de Empreendimentos Científicos e Tecnológicos (FINATEC)
+        position: Developer and Researcher
+        location: Brasília, Brazil
+        start_date: "2017"
+        end_date: "2018"
+        summary: Investigated software modernization practices and methods for the Brazilian Army, analyzing SISDOT and SISBOL systems[cite: 2, 3].
 
     Awards:
-      - title: Nobel Prize in Physics
+      - title: Best Paper Award
         authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+          - "Walter Lucas et al."
+        date: 2019
+        awarder: Brazilian Symposium on Software Engineering (SBES)
+        summary: Awarded for research on lambda expressions and program comprehension[cite: 3].
 
-      - title: Max Planck Medal
+      - title: 7th Entrepreneurship Award
         authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+          - "Patos de Minas University Center"
+        date: 2015
+        awarder: UNIPAM
+        summary: Award for the UNIEXPO extension platform project[cite: 2, 3].
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: Understanding the adoption of modern Javascript features An empirical study on open-source systems
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+          - Walter Lucas et al.
+        publisher: Empirical Software Engineering JCR
+        releaseDate: 2025-01-01
+        url: https://doi.org/10.1007/s10664-024-10500-z
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+      - title: Embracing modern C++ features An empirical assessment on the KDE community
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+          - Walter Lucas et al.
+        publisher: Journal of Software-Evolution and Process
+        releaseDate: 2023-01-01
+        url: https://doi.org/10.1002/smr.2605
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+      - title: Understanding the Impact of Introducing Lambda Expressions in Java Programs
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+          - Walter Lucas Monteiro de Mendonça et al.
+        publisher: Journal of Software Engineering Research and Development
+        releaseDate: 2020-01-01
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Software Engineering
+        level: Expert
+        icon: fa-solid fa-code
+        keywords: "Java, Python, PHP, Spring Boot, Software Modernization, Code Rejuvenation, Static Code Analysis, ETL, SQL, Git, CI/CD"
 
     Languages:
-      - name: German
+      - name: Portuguese
         summary: "Native speaker"
 
       - name: English
-        summary: "Fluent"
+        summary: "Advanced"
 
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+      - name: Spanish
+        summary: "Intermediate"
 
     Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: Escritório Social Virtual (ESV)
+        summary: Mobile application and software microservices infrastructure providing services to support the social reintegration of prison system graduates.
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+          - "ETL implementations for secure data synchronization"
+          - "Privacy-centric requirement elicitation"
+        start_date: 2020-01-01
+        end_date: 2024-01-01
