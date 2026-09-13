@@ -1,16 +1,16 @@
 cv:
   name: Walter Lucas Monteiro de Mendonça
   label: Software Engineer & Researcher (Ph.D. in Computer Science)
-  email: waltimlmm@gmail.com
+  email: walter.mendonca@aluno.unb.br
   location: Brasília, Brazil
-  image: "3x4AtualWalter.png"
+  image: "prof_pic.jpg"
   summary: Software engineer and researcher holding a Ph.D. in Computer Science from the University of Brasília (UnB), specializing in source code rejuvenation, software evolution, code comprehension, and system modernization.
 
   social_networks:
     - network: GitHub
       username: waltim
     - network: LinkedIn
-      username: example
+      username: walter-lucas-mendonca
 
   address:
     street: SQN 405 Block O Apt 104
@@ -42,7 +42,7 @@ cv:
         start_date: "2017"
         end_date: "2019"
         highlights:
-          - "Master Thesis: Analysis of the impact on the understanding of Java programs with the adoption of lambda expressions[cite: 3]."
+          - "Master Thesis: Analysis of the impact on the understanding of Java programs with the adoption of lambda expressions."
           - "Advisor: Rodrigo Bonifácio de Almeida."
 
       - institution: University Center of Patos de Minas (UNIPAM)
@@ -62,42 +62,42 @@ cv:
         location: Brazil
         start_date: "2024"
         end_date: "Present"
-        summary: Conduction and refinement of requirements, legacy system modernization, troubleshooting, refactoring, and static analysis using SonarLint and Fortify, alongside automated testing with JUnit and Mockito.
+        summary: "Conduction and refinement of requirements, legacy system modernization, troubleshooting, refactoring, and static analysis using SonarLint and Fortify, alongside automated testing with JUnit and Mockito."
 
       - company: University of Brasília (UnB) / CNJ
         position: Developer and Researcher
         location: Brasília, Brazil
         start_date: "2023"
         end_date: "2024"
-        summary: Analyzed the impact of the ESV mobile application on the social reintegration of prison system graduates, coordinating backend, frontend, and architecture validation.
+        summary: "Analyzed the impact of the ESV mobile application on the social reintegration of prison system graduates, coordinating backend, frontend, and architecture validation."
 
       - company: INESC TEC International Visiting Researcher Programme
         position: Researcher
         location: Portugal
         start_date: "2022"
         end_date: "2023"
-        summary: Studied development practices of KDE contributors concerning modern C++ feature adoption across GitHub repository histories.
+        summary: "Studied development practices of KDE contributors concerning modern C++ feature adoption across GitHub repository histories."
 
       - company: Fundação de Empreendimentos Científicos e Tecnológicos (FINATEC)
         position: Developer and Researcher
         location: Brasília, Brazil
         start_date: "2020"
         end_date: "2022"
-        summary: Explored privacy and user-centric requirement elicitation techniques in social inclusion contexts utilizing ETL solutions.
+        summary: "Explored privacy and user-centric requirement elicitation techniques in social inclusion contexts utilizing ETL solutions."
 
       - company: Department of Electrical Engineering - UNB
         position: Developer and Researcher
         location: Brasília, Brazil
         start_date: "2018"
         end_date: "2020"
-        summary: Applied research in strategic planning, corporate risk management, and corporate information management within the Ministry of Planning[cite: 2, 3].
+        summary: "Applied research in strategic planning, corporate risk management, and corporate information management within the Ministry of Planning."
 
       - company: Fundação de Empreendimentos Científicos e Tecnológicos (FINATEC)
         position: Developer and Researcher
         location: Brasília, Brazil
         start_date: "2017"
         end_date: "2018"
-        summary: Investigated software modernization practices and methods for the Brazilian Army, analyzing SISDOT and SISBOL systems[cite: 2, 3].
+        summary: "Investigated software modernization practices and methods for the Brazilian Army, analyzing SISDOT and SISBOL systems."
 
     Awards:
       - title: Best Paper Award
@@ -105,40 +105,40 @@ cv:
           - "Walter Lucas et al."
         date: 2019
         awarder: Brazilian Symposium on Software Engineering (SBES)
-        summary: Awarded for research on lambda expressions and program comprehension[cite: 3].
+        summary: "Awarded for research on lambda expressions and program comprehension."
 
       - title: 7th Entrepreneurship Award
         authors:
           - "Patos de Minas University Center"
         date: 2015
         awarder: UNIPAM
-        summary: Award for the UNIEXPO extension platform project[cite: 2, 3].
+        summary: "Award for the UNIEXPO extension platform project."
 
     Publications:
-      - title: Understanding the adoption of modern Javascript features An empirical study on open-source systems
+      - title: "Understanding the adoption of modern Javascript features: An empirical study on open-source systems"
         authors:
-          - Walter Lucas et al.
-        publisher: Empirical Software Engineering JCR
-        releaseDate: 2025-01-01
-        url: https://doi.org/10.1007/s10664-024-10500-z
+          - "Walter Lucas et al."
+        publisher: "Empirical Software Engineering JCR"
+        releaseDate: "2025-01-01"
+        url: "https://doi.org/10.1007/s10664-024-10500-z"
 
-      - title: Embracing modern C++ features An empirical assessment on the KDE community
+      - title: "Embracing modern C++ features: An empirical assessment on the KDE community"
         authors:
-          - Walter Lucas et al.
-        publisher: Journal of Software-Evolution and Process
-        releaseDate: 2023-01-01
-        url: https://doi.org/10.1002/smr.2605
+          - "Walter Lucas et al."
+        publisher: "Journal of Software-Evolution and Process"
+        releaseDate: "2023-01-01"
+        url: "https://doi.org/10.1002/smr.2605"
 
-      - title: Understanding the Impact of Introducing Lambda Expressions in Java Programs
+      - title: "Understanding the Impact of Introducing Lambda Expressions in Java Programs"
         authors:
-          - Walter Lucas Monteiro de Mendonça et al.
-        publisher: Journal of Software Engineering Research and Development
-        releaseDate: 2020-01-01
+          - "Walter Lucas Monteiro de Mendonça et al."
+        publisher: "Journal of Software Engineering Research and Development"
+        releaseDate: "2020-01-01"
 
     Skills:
       - name: Software Engineering
         level: Expert
-        icon: fa-solid fa-code
+        icon: "fa-solid fa-code"
         keywords: "Java, Python, PHP, Spring Boot, Software Modernization, Code Rejuvenation, Static Code Analysis, ETL, SQL, Git, CI/CD"
 
     Languages:
@@ -152,10 +152,10 @@ cv:
         summary: "Intermediate"
 
     Projects:
-      - name: Escritório Social Virtual (ESV)
-        summary: Mobile application and software microservices infrastructure providing services to support the social reintegration of prison system graduates.
+      - name: "Escritório Social Virtual (ESV)"
+        summary: "Mobile application and software microservices infrastructure providing services to support the social reintegration of prison system graduates."
         highlights:
           - "ETL implementations for secure data synchronization"
           - "Privacy-centric requirement elicitation"
-        start_date: 2020-01-01
-        end_date: 2024-01-01
+        start_date: "2020-01-01"
+        end_date: "2024-01-01"
