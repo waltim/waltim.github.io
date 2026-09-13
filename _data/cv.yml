@@ -114,27 +114,6 @@ cv:
         awarder: UNIPAM
         summary: "Award for the UNIEXPO extension platform project."
 
-    Publications:
-      - title: "Understanding the adoption of modern Javascript features: An empirical study on open-source systems"
-        authors:
-          - "Walter Lucas et al."
-        publisher: "Empirical Software Engineering JCR"
-        releaseDate: "2025-01-01"
-        url: "https://doi.org/10.1007/s10664-024-10500-z"
-
-      - title: "Embracing modern C++ features: An empirical assessment on the KDE community"
-        authors:
-          - "Walter Lucas et al."
-        publisher: "Journal of Software-Evolution and Process"
-        releaseDate: "2023-01-01"
-        url: "https://doi.org/10.1002/smr.2605"
-
-      - title: "Understanding the Impact of Introducing Lambda Expressions in Java Programs"
-        authors:
-          - "Walter Lucas Monteiro de Mendonça et al."
-        publisher: "Journal of Software Engineering Research and Development"
-        releaseDate: "2020-01-01"
-
     Skills:
       - name: Software Engineering
         level: Expert
