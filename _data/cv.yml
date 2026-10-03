@@ -13,10 +13,8 @@ cv:
       username: walter-lucas-mendonca
 
   address:
-    street: SQN 405 Block O Apt 104
     city: Brasília
     region: Federal District
-    postalCode: "70846-150"
     countryCode: BR
 
   sections:
